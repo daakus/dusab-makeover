@@ -2,11 +2,12 @@ type ImagePool = { keys: string[]; images: string[] };
 
 const IMAGE_POOLS: ImagePool[] = [
   {
-    keys: ["hair", "silk press", "blowout", "braid", "loc", "color"],
+    keys: ["hair", "silk press", "blowout", "braid", "loc", "color", "frontal", "installation", "wig", "lace"],
     images: [
       "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1634128221889-82ed6efebfc3?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1596920566699-e32701af02b0?auto=format&fit=crop&w=1200&q=80",
     ],
   },
   {
@@ -18,11 +19,12 @@ const IMAGE_POOLS: ImagePool[] = [
     ],
   },
   {
-    keys: ["makeup", "bridal", "glam", "soft beat", "editorial"],
+    keys: ["makeup", "bridal", "glam", "soft beat", "editorial", "artistry", "beat", "glow"],
     images: [
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
     ],
   },
   {
@@ -59,8 +61,18 @@ const IMAGE_POOLS: ImagePool[] = [
   },
 ];
 
+// Tutorial / online training pool — matched before general fallback
+const TUTORIAL_POOL = {
+  keys: ["tutorial", "training", "online", "course", "lesson", "class", "masterclass", "beginner", "advanced"],
+  images: [
+    "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80",
+  ],
+};
+
 const GENERAL_IMAGES = [
-  "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1200&q=80",
   "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1200&q=80",
   "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1200&q=80",
 ];
@@ -82,8 +94,15 @@ export function getDefaultServiceImage(input: { category?: string | null; name?:
   const name = (input.name ?? "").toLowerCase().trim();
   const haystack = `${category} ${name}`.trim();
 
+  // Check main pools first
   const pool = IMAGE_POOLS.find((entry) => entry.keys.some((key) => haystack.includes(key)));
   if (pool) return pickFromPool(`${category}|${name}`, pool.images);
+
+  // Check tutorial pool before generic fallback
+  if (TUTORIAL_POOL.keys.some((key) => haystack.includes(key))) {
+    return pickFromPool(`${category}|${name}`, TUTORIAL_POOL.images);
+  }
+
   return pickFromPool(`${category}|${name}`, GENERAL_IMAGES);
 }
 

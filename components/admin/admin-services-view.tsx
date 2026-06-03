@@ -81,7 +81,7 @@ export function AdminServicesView(props: {
   }
 
   function openNew() {
-    setDraft({ ...emptyDraft, imageSrc: services[0]?.imageSrc ?? "" });
+    setDraft({ ...emptyDraft });
     setSaveError(null);
     setDrawerOpen(true);
   }
@@ -431,6 +431,33 @@ export function AdminServicesView(props: {
                 value={draft.description}
                 onChange={(e) => setDraft((d) => ({ ...d, description: e.target.value }))}
               />
+            </div>
+
+            <div className="space-y-2 pt-4">
+              <label className="signature-label block text-[10px] text-stitch-secondary">
+                Image URL <span className="normal-case opacity-50">(optional — leave blank to auto-pick)</span>
+              </label>
+              <input
+                type="url"
+                placeholder="https://images.unsplash.com/..."
+                className="w-full border-b-2 border-stitch-outline-variant bg-transparent py-2 text-sm outline-none focus:border-stitch-primary focus:ring-0"
+                value={draft.imageSrc}
+                onChange={(e) => setDraft((d) => ({ ...d, imageSrc: e.target.value }))}
+              />
+              {draft.imageSrc ? (
+                <div className="relative mt-2 h-28 w-full overflow-hidden rounded-lg bg-stone-100">
+                  <img
+                    src={draft.imageSrc}
+                    alt="Preview"
+                    className="h-full w-full object-cover"
+                    onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+                  />
+                </div>
+              ) : (
+                <p className="text-[10px] text-stone-400">
+                  A relevant image will be chosen automatically based on the service name and category.
+                </p>
+              )}
             </div>
             {saveError ? (
               <p className="text-sm text-red-600 dark:text-red-400">{saveError}</p>
