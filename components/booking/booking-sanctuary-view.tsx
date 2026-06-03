@@ -8,6 +8,7 @@ import {
   type DemoStaffOption,
 } from "@/lib/constants/booking-flow-demo";
 import { submitBooking } from "@/app/actions/booking";
+import { buildBookingWhatsAppUrl } from "@/lib/utils/whatsapp";
 import { BookingFlowChrome } from "@/components/booking/booking-flow-chrome";
 import { BookingFlowFooter } from "@/components/booking/booking-flow-footer";
 import { MaterialIcon } from "@/components/home/material-icon";
@@ -151,8 +152,21 @@ export function BookingSanctuaryView(props: {
     }
 
     if ("success" in res && res.success && res.appointmentId) {
-      toast.success("Booking submitted.");
-      router.push("/customer/appointments/upcoming");
+      toast.success("Booking submitted!");
+      // Build WhatsApp vendor-alert URL client-side (avoids popup blockers)
+      const waUrl = buildBookingWhatsAppUrl({
+        customerName:  res.customerName,
+        phoneNumber:   res.customerPhone,
+        service:       res.serviceNames,
+        preferredDate: res.dateStr,
+        preferredTime: res.timeStr,
+        amount:        res.totalGhs,
+        receiptUrl:    res.receiptUrl,
+      });
+      // Pass WhatsApp URL to confirmation page — opening it there avoids popup blockers
+      router.push(
+        `/booking/confirmation/${res.appointmentId}?wa=${encodeURIComponent(waUrl)}`
+      );
       return;
     }
 

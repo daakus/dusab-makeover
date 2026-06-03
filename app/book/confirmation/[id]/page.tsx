@@ -5,11 +5,11 @@ import { useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 
 export default function BookingConfirmationPage({ params }: { params: { id: string } }) {
-  const search = useSearchParams();
-  const waUrl  = search.get("wa") ?? "";
-  const opened = useRef(false);
+  const search  = useSearchParams();
+  const waUrl   = search.get("wa") ?? "";
+  const opened  = useRef(false);
 
-  // Auto-open WhatsApp once on mount — on mobile opens the WhatsApp app directly
+  // Auto-open WhatsApp once on mount — on mobile this opens the WhatsApp app directly
   useEffect(() => {
     if (waUrl && !opened.current) {
       opened.current = true;
@@ -18,12 +18,12 @@ export default function BookingConfirmationPage({ params }: { params: { id: stri
   }, [waUrl]);
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-6 bg-stitch-surface px-6 text-center">
+    <div className="flex min-h-screen flex-col items-center justify-center gap-6 bg-gradient-to-br from-pink-50 to-rose-100 px-6 text-center">
       <span className="text-6xl">🎉</span>
-      <h1 className="font-display text-3xl text-rose-900">Booking Submitted!</h1>
-      <p className="max-w-sm text-sm leading-relaxed text-stitch-on-surface-variant">
+      <h1 className="font-serif text-3xl font-bold text-gray-900">Booking Submitted!</h1>
+      <p className="max-w-sm text-sm leading-relaxed text-gray-600">
         Your booking{" "}
-        <span className="font-mono text-xs font-medium">
+        <span className="font-mono text-xs font-bold text-pink-600">
           {params.id.slice(0, 8)}…
         </span>{" "}
         has been saved. Tap the button below to send your payment details to the artist on WhatsApp.
@@ -42,18 +42,16 @@ export default function BookingConfirmationPage({ params }: { params: { id: stri
         </a>
       )}
 
-      <p className="text-sm text-stitch-on-surface-variant">
+      <p className="text-sm text-gray-500">
         Questions? Call or WhatsApp the artist on{" "}
-        <a href="tel:+233546006627" className="font-bold text-stitch-primary">
-          0546006627
-        </a>
+        <a href="tel:+233546006627" className="font-bold text-pink-600">0546006627</a>
       </p>
 
       <Link
-        href="/customer/appointments/upcoming"
-        className="rounded-full border border-stitch-outline-variant px-8 py-3 text-sm font-bold text-stitch-on-surface transition-colors hover:bg-stitch-surface-container-low"
+        href="/book"
+        className="rounded-full border border-gray-300 px-8 py-3 text-sm font-bold text-gray-700 transition-colors hover:bg-white"
       >
-        View My Appointments
+        Make Another Booking
       </Link>
     </div>
   );

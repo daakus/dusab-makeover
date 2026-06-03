@@ -39,7 +39,7 @@ export async function submitBooking(formData: FormData) {
 
   const { data: svcRows } = await supabase
     .from("services")
-    .select("id,price_ghs,duration_minutes")
+    .select("id,name,price_ghs,duration_minutes")
     .in("id", serviceIds);
   if (!svcRows || svcRows.length !== serviceIds.length) {
     return { error: "Selected service could not be found. Please choose another service." };
@@ -50,6 +50,13 @@ export async function submitBooking(formData: FormData) {
   const endAt = addMinutes(startAt, totalDuration || 60);
 
   const normalizedStaffId = staffId && isUuid(staffId) ? staffId : null;
+
+  // Fetch profile name + phone for the WhatsApp vendor alert
+  const { data: profileFull } = await supabase
+    .from("profiles")
+    .select("full_name, phone")
+    .eq("id", user.id)
+    .maybeSingle();
 
   const { data: appointment, error: apptErr } = await supabase
     .from("appointments")
@@ -96,6 +103,26 @@ export async function submitBooking(formData: FormData) {
   revalidatePath("/admin");
   revalidatePath("/admin/approvals");
   revalidatePath("/admin/payments");
-  return { success: true as const, appointmentId: appointment.id };
+
+  // Generate a signed URL (1 year) — works without Supabase login on any device
+  // getPublicUrl() only works when the bucket is public; payment-screenshots is private
+  const ONE_YEAR_SECS = 60 * 60 * 24 * 365;
+  const { data: signedData } = await supabase.storage
+    .from("payment-screenshots")
+    .createSignedUrl(path, ONE_YEAR_SECS);
+
+  const totalGhs = svcRows.reduce((sum, s) => sum + Number(s.price_ghs), 0);
+
+  return {
+    success:       true as const,
+    appointmentId: appointment.id,
+    receiptUrl:    signedData?.signedUrl ?? "",
+    customerName: profileFull?.full_name ?? "Customer",
+    customerPhone: profileFull?.phone ?? "",
+    serviceNames: svcRows.map((s) => (s as { name: string }).name).join(", "),
+    totalGhs,
+    dateStr: date,
+    timeStr: time,
+  };
 }
 
