@@ -34,8 +34,8 @@ export default function BookPage() {
             Professional Makeup · Hairstyling · Frontal Wig Installations
           </p>
           <p className="mt-2 text-sm italic text-pink-700">
-            "Your geographical location is not a barrier — book online training today and save the
-            stress of always going to the salon."
+            &ldquo;Your geographical location is not a barrier — book online training today and save the
+            stress of always going to the salon.&rdquo;
           </p>
         </div>
 
