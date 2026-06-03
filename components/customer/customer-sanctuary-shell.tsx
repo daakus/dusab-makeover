@@ -51,7 +51,7 @@ export function CustomerSanctuaryShell(props: {
     <div className="min-h-dvh bg-stitch-surface text-stitch-on-surface">
       <aside className="fixed z-40 hidden h-screen w-64 flex-col bg-stitch-surface-container-low py-8 pr-4 md:flex">
         <div className="mb-12 px-8">
-          <Link href="/" className="font-headline text-2xl italic text-orange-900">
+          <Link href="/" className="font-headline text-2xl italic text-rose-900">
             Dusab MakeOver
           </Link>
         </div>
@@ -65,8 +65,8 @@ export function CustomerSanctuaryShell(props: {
                 className={cn(
                   "flex items-center rounded-r-full px-8 py-3 font-body text-sm tracking-wide transition-transform duration-200 hover:translate-x-1",
                   active
-                    ? "bg-orange-100 font-bold text-orange-900"
-                    : "text-orange-800/60 hover:bg-orange-50"
+                    ? "bg-rose-100 font-bold text-rose-900"
+                    : "text-rose-800/60 hover:bg-rose-50"
                 )}
               >
                 <MaterialIcon name={item.icon} className="mr-3" />
@@ -93,8 +93,8 @@ export function CustomerSanctuaryShell(props: {
               )}
             </div>
             <div className="min-w-0">
-              <p className="truncate text-sm font-bold text-orange-900">{displayName}</p>
-              <p className="text-[10px] uppercase tracking-widest text-orange-800/50">Customer</p>
+              <p className="truncate text-sm font-bold text-rose-900">{displayName}</p>
+              <p className="text-[10px] uppercase tracking-widest text-rose-800/50">Customer</p>
             </div>
           </div>
           <form action={signOut} className="mt-4">
@@ -115,17 +115,17 @@ export function CustomerSanctuaryShell(props: {
           href="/customer"
           className={cn(
             "flex flex-col items-center justify-center rounded-2xl px-4 py-1",
-            pathname === "/customer" ? "bg-orange-100 text-orange-900" : "text-orange-800/50"
+            pathname === "/customer" ? "bg-rose-100 text-rose-900" : "text-rose-800/50"
           )}
         >
           <MaterialIcon name="home" filled={pathname === "/customer"} />
           <span className="mt-1 font-body text-[10px] uppercase tracking-[0.1rem]">Home</span>
         </Link>
-        <Link href="/services" className="flex flex-col items-center justify-center text-orange-800/50">
+        <Link href="/services" className="flex flex-col items-center justify-center text-rose-800/50">
           <MaterialIcon name="spa" />
           <span className="mt-1 font-body text-[10px] uppercase tracking-[0.1rem]">Services</span>
         </Link>
-        <Link href="/booking" className="flex flex-col items-center justify-center text-orange-800/50">
+        <Link href="/booking" className="flex flex-col items-center justify-center text-rose-800/50">
           <MaterialIcon name="event_note" />
           <span className="mt-1 font-body text-[10px] uppercase tracking-[0.1rem]">Bookings</span>
         </Link>
@@ -136,8 +136,8 @@ export function CustomerSanctuaryShell(props: {
             pathname.startsWith("/customer/profile") ||
               pathname.startsWith("/customer/settings") ||
               pathname.startsWith("/customer/account-settings")
-              ? "bg-orange-100 text-orange-900"
-              : "text-orange-800/50"
+              ? "bg-rose-100 text-rose-900"
+              : "text-rose-800/50"
           )}
         >
           <MaterialIcon

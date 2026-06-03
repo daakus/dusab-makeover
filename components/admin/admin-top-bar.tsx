@@ -40,14 +40,14 @@ export function AdminTopBar(props: {
             placeholder={placeholder}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full rounded-full border-none bg-stitch-surface-container-low py-2.5 pl-12 pr-4 font-body text-sm text-stitch-on-surface transition-all placeholder:text-stone-400 focus:outline-none focus:ring-1 focus:ring-orange-200 dark:bg-stone-900"
+            className="w-full rounded-full border-none bg-stitch-surface-container-low py-2.5 pl-12 pr-4 font-body text-sm text-stitch-on-surface transition-all placeholder:text-stone-400 focus:outline-none focus:ring-1 focus:ring-rose-200 dark:bg-stone-900"
           />
         </div>
       </div>
       <div className="flex items-center gap-4 md:gap-6">
         <button
           type="button"
-          className="text-stone-400 transition-colors hover:text-stitch-primary dark:hover:text-orange-300"
+          className="text-stone-400 transition-colors hover:text-stitch-primary dark:hover:text-rose-300"
           aria-label="Notifications"
         >
           <MaterialIcon name="notifications" size="sm" />

@@ -7,10 +7,10 @@ export function BookingFlowFooter() {
     <footer className="mt-20 w-full bg-stitch-surface-container-low px-8 py-16">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:grid-cols-4">
         <div className="md:col-span-2">
-          <span className="mb-4 block font-headline text-2xl italic text-orange-900">
+          <span className="mb-4 block font-headline text-2xl italic text-rose-900">
             {SITE_NAME}
           </span>
-          <p className="max-w-sm font-body text-sm leading-relaxed text-orange-900/70">
+          <p className="max-w-sm font-body text-sm leading-relaxed text-rose-900/70">
             Crafting editorial excellence in beauty since 2018. Your sanctuary for modern
             ritual and heritage care.
           </p>
@@ -23,7 +23,7 @@ export function BookingFlowFooter() {
             <li>
               <Link
                 href="/privacy"
-                className="font-body text-sm opacity-70 transition-all hover:text-orange-700 hover:opacity-100"
+                className="font-body text-sm opacity-70 transition-all hover:text-rose-700 hover:opacity-100"
               >
                 Privacy Policy
               </Link>
@@ -31,7 +31,7 @@ export function BookingFlowFooter() {
             <li>
               <Link
                 href="/terms"
-                className="font-body text-sm opacity-70 transition-all hover:text-orange-700 hover:opacity-100"
+                className="font-body text-sm opacity-70 transition-all hover:text-rose-700 hover:opacity-100"
               >
                 Terms of Service
               </Link>
@@ -46,7 +46,7 @@ export function BookingFlowFooter() {
             <li>
               <Link
                 href="/contact"
-                className="font-body text-sm opacity-70 transition-all hover:text-orange-700 hover:opacity-100"
+                className="font-body text-sm opacity-70 transition-all hover:text-rose-700 hover:opacity-100"
               >
                 Contact Us
               </Link>
@@ -54,7 +54,7 @@ export function BookingFlowFooter() {
             <li>
               <Link
                 href="/careers"
-                className="font-body text-sm opacity-70 transition-all hover:text-orange-700 hover:opacity-100"
+                className="font-body text-sm opacity-70 transition-all hover:text-rose-700 hover:opacity-100"
               >
                 Careers
               </Link>
@@ -63,7 +63,7 @@ export function BookingFlowFooter() {
         </div>
         <div className="flex items-center justify-between border-t border-stitch-outline-variant/20 pt-12 md:col-span-4">
           <p className="font-body text-sm opacity-70">
-            © {new Date().getFullYear()} {SITE_NAME}. The Digital Sanctuary.
+            Â© {new Date().getFullYear()} {SITE_NAME}. The Digital Sanctuary.
           </p>
           <div className="flex gap-6 text-stitch-outline">
             <MaterialIcon name="share" className="cursor-pointer hover:text-stitch-primary" />

@@ -92,7 +92,7 @@ export function AdminCalendarView() {
                       <div
                         className={cn(
                           "ml-auto h-2 w-2 rounded-full",
-                          s.status === "available" ? "bg-green-500" : "bg-orange-400"
+                          s.status === "available" ? "bg-green-500" : "bg-rose-400"
                         )}
                       />
                     </div>
@@ -232,17 +232,17 @@ export function AdminCalendarView() {
                           return (
                             <div
                               key={a.id}
-                              className="group flex min-h-[110px] w-full flex-col justify-center rounded-xl border-l-4 border-orange-300 bg-stitch-surface-container-lowest/50 p-6 dark:bg-stone-900/50"
+                              className="group flex min-h-[110px] w-full flex-col justify-center rounded-xl border-l-4 border-rose-300 bg-stitch-surface-container-lowest/50 p-6 dark:bg-stone-900/50"
                             >
                               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                                 <div className="flex items-center gap-4">
-                                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100">
-                                    <MaterialIcon name="pending_actions" size="sm" className="text-orange-700" />
+                                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-rose-100">
+                                    <MaterialIcon name="pending_actions" size="sm" className="text-rose-700" />
                                   </div>
                                   <div>
                                     <h5 className="font-display text-lg text-stitch-on-surface">{a.title}</h5>
                                     <p className="text-xs text-stitch-on-surface-variant">
-                                      Pending Confirmation • {a.timeLabel}
+                                      Pending Confirmation â€¢ {a.timeLabel}
                                     </p>
                                   </div>
                                 </div>

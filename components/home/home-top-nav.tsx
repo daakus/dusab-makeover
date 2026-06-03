@@ -44,7 +44,7 @@ export function HomeTopNav({ className }: HomeTopNavProps) {
       >
         <Link
           href="/"
-          className="font-headline text-2xl italic text-orange-900 transition-opacity hover:opacity-90"
+          className="font-headline text-2xl italic text-rose-900 transition-opacity hover:opacity-90"
         >
           {SITE_NAME}
         </Link>
@@ -62,8 +62,8 @@ export function HomeTopNav({ className }: HomeTopNavProps) {
                 className={cn(
                   "transition-colors duration-300",
                   active
-                    ? "border-b-2 border-orange-800 font-bold text-orange-800"
-                    : "text-orange-700/70 hover:text-orange-900"
+                    ? "border-b-2 border-rose-800 font-bold text-rose-800"
+                    : "text-rose-700/70 hover:text-rose-900"
                 )}
               >
                 {item.label}
@@ -93,7 +93,7 @@ export function HomeTopNav({ className }: HomeTopNavProps) {
           </Link>
           <button
             type="button"
-            className="rounded-lg p-2 text-orange-900 md:hidden"
+            className="rounded-lg p-2 text-rose-900 md:hidden"
             aria-expanded={mobileOpen}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             onClick={() => setMobileOpen((o) => !o)}
@@ -124,7 +124,7 @@ export function HomeTopNav({ className }: HomeTopNavProps) {
                       href={item.href}
                       className={cn(
                         "block py-2 transition-colors",
-                        active ? "font-bold text-orange-800" : "text-orange-800/80"
+                        active ? "font-bold text-rose-800" : "text-rose-800/80"
                       )}
                     >
                       {item.label}
@@ -135,7 +135,7 @@ export function HomeTopNav({ className }: HomeTopNavProps) {
               <li>
                 <Link
                   href="/login"
-                  className="block py-2 text-orange-800/80"
+                  className="block py-2 text-rose-800/80"
                 >
                   Sign in
                 </Link>
@@ -143,7 +143,7 @@ export function HomeTopNav({ className }: HomeTopNavProps) {
               <li>
                 <Link
                   href="/register"
-                  className="block py-2 text-orange-800/80"
+                  className="block py-2 text-rose-800/80"
                 >
                   Sign up
                 </Link>

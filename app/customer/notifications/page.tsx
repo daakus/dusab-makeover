@@ -22,7 +22,7 @@ export default async function CustomerNotificationsPage() {
         <span className="text-[10px] font-bold uppercase tracking-widest text-stitch-secondary">
           Inbox
         </span>
-        <h1 className="font-headline text-3xl text-orange-900 md:text-4xl">Notifications</h1>
+        <h1 className="font-headline text-3xl text-rose-900 md:text-4xl">Notifications</h1>
         <p className="mt-2 max-w-xl text-sm text-stitch-on-surface-variant">
           Messages stored in the notifications table for your user.
         </p>
@@ -47,7 +47,7 @@ export default async function CustomerNotificationsPage() {
               </div>
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">
-                  <h2 className="font-bold text-orange-900">{n.title}</h2>
+                  <h2 className="font-bold text-rose-900">{n.title}</h2>
                   {!n.read_at ? (
                     <span className="rounded-full bg-stitch-secondary-container/30 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-stitch-secondary">
                       Unread

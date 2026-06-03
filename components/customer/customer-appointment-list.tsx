@@ -44,7 +44,7 @@ export function CustomerAppointmentList(props: {
                 )}
               </div>
               <div className="min-w-0">
-                <h3 className="font-headline text-lg text-orange-900">{row.serviceName}</h3>
+                <h3 className="font-headline text-lg text-rose-900">{row.serviceName}</h3>
                 <p className="mt-1 flex flex-wrap items-center gap-2 text-sm text-stitch-on-surface-variant">
                   <MaterialIcon name="schedule" className="text-sm" />
                   {variant === "upcoming"

@@ -17,7 +17,7 @@ export function CustomerAppointmentsSubnav(props: { active: "upcoming" | "histor
           className={cn(
             "rounded-t-lg px-4 py-2 text-sm font-bold transition-colors",
             active === t.key
-              ? "bg-orange-100 text-orange-900"
+              ? "bg-rose-100 text-rose-900"
               : "text-stitch-on-surface-variant hover:bg-stitch-surface-container-low"
           )}
         >

@@ -6,7 +6,7 @@ export function HomeFooter() {
   return (
     <footer className="mx-auto mt-20 grid w-full max-w-7xl grid-cols-1 gap-12 px-8 py-16 md:grid-cols-4">
       <div>
-        <span className="mb-4 block font-headline text-2xl italic text-orange-900">
+        <span className="mb-4 block font-headline text-2xl italic text-rose-900">
           Dusab MakeOver.
         </span>
         <p className="mb-6 font-body text-sm leading-relaxed text-stitch-on-surface-variant">
@@ -41,7 +41,7 @@ export function HomeFooter() {
           <li>
             <Link
               href="/services"
-              className="opacity-70 transition-all duration-300 hover:text-orange-700 hover:opacity-100"
+              className="opacity-70 transition-all duration-300 hover:text-rose-700 hover:opacity-100"
             >
               Services
             </Link>
@@ -49,7 +49,7 @@ export function HomeFooter() {
           <li>
             <Link
               href="/gallery"
-              className="opacity-70 transition-all duration-300 hover:text-orange-700 hover:opacity-100"
+              className="opacity-70 transition-all duration-300 hover:text-rose-700 hover:opacity-100"
             >
               Booking Portfolio
             </Link>
@@ -57,7 +57,7 @@ export function HomeFooter() {
           <li>
             <Link
               href="/contact"
-              className="opacity-70 transition-all duration-300 hover:text-orange-700 hover:opacity-100"
+              className="opacity-70 transition-all duration-300 hover:text-rose-700 hover:opacity-100"
             >
               Join Our Team
             </Link>
@@ -65,7 +65,7 @@ export function HomeFooter() {
           <li>
             <Link
               href="/customer"
-              className="opacity-70 transition-all duration-300 hover:text-orange-700 hover:opacity-100"
+              className="opacity-70 transition-all duration-300 hover:text-rose-700 hover:opacity-100"
             >
               Member Login
             </Link>
@@ -80,7 +80,7 @@ export function HomeFooter() {
           <li>
             <Link
               href="/privacy"
-              className="opacity-70 transition-all duration-300 hover:text-orange-700 hover:opacity-100"
+              className="opacity-70 transition-all duration-300 hover:text-rose-700 hover:opacity-100"
             >
               Privacy Policy
             </Link>
@@ -88,7 +88,7 @@ export function HomeFooter() {
           <li>
             <Link
               href="/terms"
-              className="opacity-70 transition-all duration-300 hover:text-orange-700 hover:opacity-100"
+              className="opacity-70 transition-all duration-300 hover:text-rose-700 hover:opacity-100"
             >
               Terms of Service
             </Link>
@@ -96,7 +96,7 @@ export function HomeFooter() {
           <li>
             <Link
               href="/contact"
-              className="opacity-70 transition-all duration-300 hover:text-orange-700 hover:opacity-100"
+              className="opacity-70 transition-all duration-300 hover:text-rose-700 hover:opacity-100"
             >
               Contact Us
             </Link>
@@ -104,7 +104,7 @@ export function HomeFooter() {
           <li>
             <Link
               href="/contact"
-              className="opacity-70 transition-all duration-300 hover:text-orange-700 hover:opacity-100"
+              className="opacity-70 transition-all duration-300 hover:text-rose-700 hover:opacity-100"
             >
               Careers
             </Link>
@@ -127,7 +127,7 @@ export function HomeFooter() {
         </p>
       </div>
       <div className="border-t border-stitch-outline-variant/10 pt-12 text-center text-xs opacity-50 md:col-span-4">
-        © {new Date().getFullYear()} {SITE_NAME}. The Digital Sanctuary.
+        Â© {new Date().getFullYear()} {SITE_NAME}. The Digital Sanctuary.
       </div>
     </footer>
   );

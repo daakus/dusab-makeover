@@ -29,8 +29,8 @@ export function MobileBottomNav() {
             className={cn(
               "flex flex-col items-center justify-center rounded-2xl px-4 py-1 transition-all duration-300",
               active
-                ? "bg-orange-100 text-orange-900"
-                : "scale-90 text-orange-800/50 hover:bg-orange-50"
+                ? "bg-rose-100 text-rose-900"
+                : "scale-90 text-rose-800/50 hover:bg-rose-50"
             )}
           >
             <MaterialIcon

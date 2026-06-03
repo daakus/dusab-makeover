@@ -56,7 +56,7 @@ export function AdminOverviewView() {
               </span>
             </div>
             <p className="mb-1 font-display text-4xl group-hover:text-stitch-on-primary">1,284</p>
-            <p className="text-xs text-orange-800/60 group-hover:text-stitch-primary-fixed">+12% from last month</p>
+            <p className="text-xs text-rose-800/60 group-hover:text-stitch-primary-fixed">+12% from last month</p>
           </div>
           <div className="group rounded-xl bg-stitch-surface-container-lowest p-8 shadow-sm transition-colors duration-500 hover:bg-stitch-secondary dark:bg-white/95">
             <div className="mb-6 flex items-start justify-between">
@@ -70,7 +70,7 @@ export function AdminOverviewView() {
               </span>
             </div>
             <p className="mb-1 font-display text-4xl group-hover:text-stitch-on-secondary">GHS 4,920</p>
-            <p className="text-xs text-orange-800/60 group-hover:text-stitch-secondary-fixed">84% of daily goal</p>
+            <p className="text-xs text-rose-800/60 group-hover:text-stitch-secondary-fixed">84% of daily goal</p>
           </div>
           <div className="group rounded-xl bg-stitch-surface-container-lowest p-8 shadow-sm transition-colors duration-500 hover:bg-stitch-tertiary dark:bg-white/95">
             <div className="mb-6 flex items-start justify-between">
@@ -84,7 +84,7 @@ export function AdminOverviewView() {
               </span>
             </div>
             <p className="mb-1 font-display text-4xl group-hover:text-white">18</p>
-            <p className="text-xs text-orange-800/60 group-hover:text-stitch-tertiary-fixed">4 on break</p>
+            <p className="text-xs text-rose-800/60 group-hover:text-stitch-tertiary-fixed">4 on break</p>
           </div>
         </div>
 
@@ -114,7 +114,7 @@ export function AdminOverviewView() {
                 {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((d) => (
                   <div
                     key={d}
-                    className="py-2 text-[10px] font-bold uppercase tracking-[0.15rem] text-orange-800/40"
+                    className="py-2 text-[10px] font-bold uppercase tracking-[0.15rem] text-rose-800/40"
                   >
                     {d}
                   </div>
@@ -122,7 +122,7 @@ export function AdminOverviewView() {
                 {[21, 22, 23].map((n) => (
                   <div
                     key={n}
-                    className="flex aspect-square cursor-pointer flex-col items-center justify-center rounded-xl text-sm text-orange-800/40 transition-colors hover:bg-stitch-surface-container"
+                    className="flex aspect-square cursor-pointer flex-col items-center justify-center rounded-xl text-sm text-rose-800/40 transition-colors hover:bg-stitch-surface-container"
                   >
                     {n}
                   </div>
@@ -143,13 +143,13 @@ export function AdminOverviewView() {
               <div className="mt-10 space-y-4">
                 <div className="flex items-center gap-4 rounded-xl p-4 transition-colors hover:bg-stitch-surface-container-highest md:gap-6">
                   <div className="min-w-[60px] text-right">
-                    <p className="text-xs font-bold text-orange-900 dark:text-orange-200">09:00</p>
-                    <p className="text-[10px] uppercase tracking-tighter text-orange-800/60">AM</p>
+                    <p className="text-xs font-bold text-rose-900 dark:text-rose-200">09:00</p>
+                    <p className="text-[10px] uppercase tracking-tighter text-rose-800/60">AM</p>
                   </div>
                   <div className="h-12 w-1 rounded-full bg-stitch-primary-container" />
                   <div className="min-w-0 flex-1">
                     <p className="font-display text-lg text-stitch-on-surface">Signature Silk Press</p>
-                    <p className="text-xs text-orange-800/60">Client: Imani K. | Stylist: Zara</p>
+                    <p className="text-xs text-rose-800/60">Client: Imani K. | Stylist: Zara</p>
                   </div>
                   <div className="rounded-full bg-stitch-primary-fixed px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-stitch-primary">
                     Confirmed
@@ -157,13 +157,13 @@ export function AdminOverviewView() {
                 </div>
                 <div className="flex items-center gap-4 rounded-xl p-4 transition-colors hover:bg-stitch-surface-container-highest md:gap-6">
                   <div className="min-w-[60px] text-right">
-                    <p className="text-xs font-bold text-orange-900 dark:text-orange-200">10:30</p>
-                    <p className="text-[10px] uppercase tracking-tighter text-orange-800/60">AM</p>
+                    <p className="text-xs font-bold text-rose-900 dark:text-rose-200">10:30</p>
+                    <p className="text-[10px] uppercase tracking-tighter text-rose-800/60">AM</p>
                   </div>
                   <div className="h-12 w-1 rounded-full bg-stitch-secondary" />
                   <div className="min-w-0 flex-1">
                     <p className="font-display text-lg text-stitch-on-surface">Radiance Facial</p>
-                    <p className="text-xs text-orange-800/60">Client: Naomi W. | Specialist: Marcus</p>
+                    <p className="text-xs text-rose-800/60">Client: Naomi W. | Specialist: Marcus</p>
                   </div>
                   <div className="rounded-full bg-stitch-secondary-fixed px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-stitch-secondary">
                     In-Progress
@@ -195,7 +195,7 @@ export function AdminOverviewView() {
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="text-sm font-bold text-stitch-on-surface">Amara Okafor</p>
-                      <p className="text-xs text-orange-800/60">Gel-X Sculpt &amp; Art</p>
+                      <p className="text-xs text-rose-800/60">Gel-X Sculpt &amp; Art</p>
                       <p className="mt-1 text-[10px] font-bold text-stitch-primary">Tomorrow @ 2:00 PM</p>
                     </div>
                   </div>
@@ -227,7 +227,7 @@ export function AdminOverviewView() {
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="text-sm font-bold text-stitch-on-surface">David M.</p>
-                      <p className="text-xs text-orange-800/60">Gentleman&apos;s Grooming</p>
+                      <p className="text-xs text-rose-800/60">Gentleman&apos;s Grooming</p>
                       <p className="mt-1 text-[10px] font-bold text-stitch-primary">Sat @ 10:00 AM</p>
                     </div>
                   </div>
@@ -248,7 +248,7 @@ export function AdminOverviewView() {
                 </div>
                 <Link
                   href="/admin/approvals"
-                  className="block w-full border-t border-stitch-outline-variant/20 py-4 text-center text-xs font-bold text-orange-800/40 transition-colors hover:text-stitch-primary"
+                  className="block w-full border-t border-stitch-outline-variant/20 py-4 text-center text-xs font-bold text-rose-800/40 transition-colors hover:text-stitch-primary"
                 >
                   View All Requests
                 </Link>
@@ -270,12 +270,12 @@ export function AdminOverviewView() {
                           "h-2 w-2 rounded-full",
                           row.dot === "green"
                             ? "bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"
-                            : "bg-orange-400"
+                            : "bg-rose-400"
                         )}
                       />
                       <span className="text-sm font-medium text-stitch-on-surface">{row.name}</span>
                     </div>
-                    <span className="text-[10px] font-bold uppercase text-orange-800/40">{row.status}</span>
+                    <span className="text-[10px] font-bold uppercase text-rose-800/40">{row.status}</span>
                   </div>
                 ))}
               </div>
@@ -287,28 +287,28 @@ export function AdminOverviewView() {
       <nav className="fixed bottom-0 left-0 z-30 flex w-full items-center justify-around rounded-t-3xl bg-stitch-surface/80 px-4 pb-6 pt-3 shadow-nav-up backdrop-blur-xl md:hidden">
         <Link
           href="/admin"
-          className="flex scale-90 flex-col items-center justify-center rounded-2xl bg-orange-100 px-4 py-1 text-orange-900 transition-transform duration-300"
+          className="flex scale-90 flex-col items-center justify-center rounded-2xl bg-rose-100 px-4 py-1 text-rose-900 transition-transform duration-300"
         >
           <MaterialIcon name="home" size="sm" />
           <span className="mt-1 text-[10px] uppercase tracking-[0.1rem]">Home</span>
         </Link>
         <Link
           href="/admin/services"
-          className="flex scale-90 flex-col items-center justify-center text-orange-800/50 transition-transform duration-300 hover:bg-orange-50"
+          className="flex scale-90 flex-col items-center justify-center text-rose-800/50 transition-transform duration-300 hover:bg-rose-50"
         >
           <MaterialIcon name="spa" size="sm" />
           <span className="mt-1 text-[10px] uppercase tracking-[0.1rem]">Services</span>
         </Link>
         <Link
           href="/admin/calendar"
-          className="flex scale-90 flex-col items-center justify-center text-orange-800/50 transition-transform duration-300 hover:bg-orange-50"
+          className="flex scale-90 flex-col items-center justify-center text-rose-800/50 transition-transform duration-300 hover:bg-rose-50"
         >
           <MaterialIcon name="event_note" size="sm" />
           <span className="mt-1 text-[10px] uppercase tracking-[0.1rem]">Bookings</span>
         </Link>
         <Link
           href="/admin/customers"
-          className="flex scale-90 flex-col items-center justify-center text-orange-800/50 transition-transform duration-300 hover:bg-orange-50"
+          className="flex scale-90 flex-col items-center justify-center text-rose-800/50 transition-transform duration-300 hover:bg-rose-50"
         >
           <MaterialIcon name="person" size="sm" />
           <span className="mt-1 text-[10px] uppercase tracking-[0.1rem]">Profile</span>
@@ -317,7 +317,7 @@ export function AdminOverviewView() {
 
       <footer className="mt-12 grid w-full max-w-7xl grid-cols-1 gap-12 bg-stitch-surface-container-low px-8 py-16 transition-all duration-300 ease-out md:mx-auto md:grid-cols-4">
         <div className="md:col-span-1">
-          <span className="mb-4 block font-display text-2xl italic text-orange-900 dark:text-orange-200">
+          <span className="mb-4 block font-display text-2xl italic text-rose-900 dark:text-rose-200">
             Dusab MakeOver
           </span>
           <p className="text-sm leading-relaxed opacity-70">Analytics Dashboard &amp; Management Portal.</p>
@@ -326,17 +326,17 @@ export function AdminOverviewView() {
           <p className="text-xs font-bold uppercase tracking-widest text-stitch-primary">Administration</p>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/admin/staff" className="opacity-70 hover:text-orange-700 hover:opacity-100 dark:hover:text-orange-300">
+              <Link href="/admin/staff" className="opacity-70 hover:text-rose-700 hover:opacity-100 dark:hover:text-rose-300">
                 Staff Portal
               </Link>
             </li>
             <li>
-              <Link href="/admin/reports" className="opacity-70 hover:text-orange-700 hover:opacity-100 dark:hover:text-orange-300">
+              <Link href="/admin/reports" className="opacity-70 hover:text-rose-700 hover:opacity-100 dark:hover:text-rose-300">
                 Financial Reports
               </Link>
             </li>
             <li>
-              <Link href="/admin/revenue" className="opacity-70 hover:text-orange-700 hover:opacity-100 dark:hover:text-orange-300">
+              <Link href="/admin/revenue" className="opacity-70 hover:text-rose-700 hover:opacity-100 dark:hover:text-rose-300">
                 Revenue
               </Link>
             </li>
@@ -344,7 +344,7 @@ export function AdminOverviewView() {
         </div>
         <div className="self-end text-right md:col-span-2">
           <p className="text-sm leading-relaxed opacity-70">
-            © {new Date().getFullYear()} Dusab MakeOver. Kumasi, Ghana.
+            Â© {new Date().getFullYear()} Dusab MakeOver. Kumasi, Ghana.
           </p>
         </div>
       </footer>

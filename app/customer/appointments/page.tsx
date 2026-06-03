@@ -21,7 +21,7 @@ export default async function CustomerAppointmentsIndexPage() {
         <span className="text-[10px] font-bold uppercase tracking-widest text-stitch-secondary">
           Appointments
         </span>
-        <h1 className="font-headline text-3xl text-orange-900 md:text-4xl">Appointment center</h1>
+        <h1 className="font-headline text-3xl text-rose-900 md:text-4xl">Appointment center</h1>
         <p className="mt-2 max-w-xl text-sm text-stitch-on-surface-variant">
           This page is connected to your appointment records in the database.
         </p>
@@ -33,7 +33,7 @@ export default async function CustomerAppointmentsIndexPage() {
           className="rounded-2xl border border-stitch-outline-variant/15 bg-stitch-surface-container-lowest p-6 shadow-sm transition-colors hover:bg-stitch-surface-container-low"
         >
           <p className="text-xs font-bold uppercase tracking-widest text-stitch-secondary">Upcoming</p>
-          <h2 className="mt-2 font-headline text-2xl text-orange-900">{upcoming.length}</h2>
+          <h2 className="mt-2 font-headline text-2xl text-rose-900">{upcoming.length}</h2>
           <p className="mt-2 text-sm text-stitch-on-surface-variant">
             Confirmed and pending bookings that have not happened yet.
           </p>
@@ -44,7 +44,7 @@ export default async function CustomerAppointmentsIndexPage() {
           className="rounded-2xl border border-stitch-outline-variant/15 bg-stitch-surface-container-lowest p-6 shadow-sm transition-colors hover:bg-stitch-surface-container-low"
         >
           <p className="text-xs font-bold uppercase tracking-widest text-stitch-secondary">History</p>
-          <h2 className="mt-2 font-headline text-2xl text-orange-900">{history.length}</h2>
+          <h2 className="mt-2 font-headline text-2xl text-rose-900">{history.length}</h2>
           <p className="mt-2 text-sm text-stitch-on-surface-variant">
             Past visits and cancelled bookings linked to your account.
           </p>

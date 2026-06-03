@@ -14,7 +14,7 @@ export interface CustomerDashboardHomeProps {
 export function CustomerDashboardHome({ firstName, upcoming, recentPast }: CustomerDashboardHomeProps) {
   const subtitle = upcoming
     ? `Your next visit is ${formatAppointmentWhen(upcoming.startAt)}.`
-    : "No upcoming appointment yet—book a service when you’re ready.";
+    : "No upcoming appointment yetâ€”book a service when youâ€™re ready.";
 
   return (
     <>
@@ -23,7 +23,7 @@ export function CustomerDashboardHome({ firstName, upcoming, recentPast }: Custo
           <span className="mb-2 block text-xs font-bold uppercase tracking-[0.2rem] text-stitch-secondary">
             Your Sanctuary Dashboard
           </span>
-          <h1 className="font-headline text-4xl italic tracking-tight text-orange-900 md:text-5xl">
+          <h1 className="font-headline text-4xl italic tracking-tight text-rose-900 md:text-5xl">
             Welcome back, {firstName}
           </h1>
           <p className="mt-2 max-w-md text-stitch-on-surface-variant">{subtitle}</p>
@@ -62,7 +62,7 @@ export function CustomerDashboardHome({ firstName, upcoming, recentPast }: Custo
                     <span className="mb-4 inline-block rounded-full bg-stitch-secondary-container/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-stitch-on-secondary-container">
                       Upcoming appointment
                     </span>
-                    <h2 className="mb-1 font-headline text-2xl text-orange-900">{upcoming.serviceName}</h2>
+                    <h2 className="mb-1 font-headline text-2xl text-rose-900">{upcoming.serviceName}</h2>
                     <p className="mb-2 flex flex-wrap items-center justify-center gap-2 text-stitch-on-surface-variant md:justify-start">
                       <MaterialIcon name="schedule" className="text-sm" />
                       {formatAppointmentWhen(upcoming.startAt)}
@@ -77,7 +77,7 @@ export function CustomerDashboardHome({ firstName, upcoming, recentPast }: Custo
                     <div className="flex flex-wrap justify-center gap-4 md:justify-start">
                       <Link
                         href={`/customer/appointments/${upcoming.id}/manage`}
-                        className="rounded-full border-2 border-stitch-outline-variant px-6 py-2 text-sm font-bold text-orange-900 transition-colors hover:bg-orange-50"
+                        className="rounded-full border-2 border-stitch-outline-variant px-6 py-2 text-sm font-bold text-rose-900 transition-colors hover:bg-rose-50"
                       >
                         Manage booking
                       </Link>
@@ -96,7 +96,7 @@ export function CustomerDashboardHome({ firstName, upcoming, recentPast }: Custo
                     <MaterialIcon name="event_available" className="text-3xl" />
                   </div>
                   <div>
-                    <h2 className="font-headline text-2xl text-orange-900">Nothing on the calendar</h2>
+                    <h2 className="font-headline text-2xl text-rose-900">Nothing on the calendar</h2>
                     <p className="mt-2 max-w-md text-stitch-on-surface-variant">
                       Book a treatment to see it here with date, stylist, and payment status.
                     </p>
@@ -114,7 +114,7 @@ export function CustomerDashboardHome({ firstName, upcoming, recentPast }: Custo
 
           <div className="mt-12">
             <div className="mb-6 flex items-end justify-between gap-4">
-              <h3 className="font-headline text-2xl text-orange-900">Recent visits</h3>
+              <h3 className="font-headline text-2xl text-rose-900">Recent visits</h3>
               <Link
                 href="/customer/appointments/history"
                 className="text-sm font-bold text-stitch-secondary hover:underline"
@@ -135,14 +135,14 @@ export function CustomerDashboardHome({ firstName, upcoming, recentPast }: Custo
                     className="group flex items-center justify-between rounded-2xl bg-stitch-surface-container-low p-6 transition-colors hover:bg-stitch-surface-container-lowest"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-orange-900">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-rose-900">
                         <MaterialIcon name="spa" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-orange-900">{row.serviceName}</h4>
+                        <h4 className="font-bold text-rose-900">{row.serviceName}</h4>
                         <p className="text-xs text-stitch-on-surface-variant">
                           {formatAppointmentDateShort(row.startAt)}
-                          {row.stylistName ? ` • ${row.stylistName}` : ""}
+                          {row.stylistName ? ` â€¢ ${row.stylistName}` : ""}
                         </p>
                       </div>
                     </div>
@@ -159,7 +159,7 @@ export function CustomerDashboardHome({ firstName, upcoming, recentPast }: Custo
                       </span>
                       <MaterialIcon
                         name="chevron_right"
-                        className="text-orange-300 opacity-0 transition-opacity group-hover:opacity-100"
+                        className="text-rose-300 opacity-0 transition-opacity group-hover:opacity-100"
                       />
                     </div>
                   </Link>
@@ -174,7 +174,7 @@ export function CustomerDashboardHome({ firstName, upcoming, recentPast }: Custo
             <span className="text-[10px] font-bold uppercase tracking-widest text-stitch-on-surface-variant">
               Account
             </span>
-            <p className="my-3 font-headline text-xl text-orange-900">Sanctuary member</p>
+            <p className="my-3 font-headline text-xl text-rose-900">Sanctuary member</p>
             <p className="text-sm text-stitch-on-surface-variant">
               Manage your profile, favorites, and notification preferences from the sidebar.
             </p>
@@ -187,7 +187,7 @@ export function CustomerDashboardHome({ firstName, upcoming, recentPast }: Custo
           </div>
 
           <div className="rounded-[2rem] bg-stitch-surface-container p-8">
-            <h3 className="mb-2 font-headline text-xl text-orange-900">Payments</h3>
+            <h3 className="mb-2 font-headline text-xl text-rose-900">Payments</h3>
             <p className="mb-4 text-sm text-stitch-on-surface-variant">
               Ghana bookings use Mobile Money. Track verification status for each appointment.
             </p>
@@ -203,7 +203,7 @@ export function CustomerDashboardHome({ firstName, upcoming, recentPast }: Custo
             <span className="mb-2 text-[10px] font-bold uppercase tracking-widest text-stitch-on-surface-variant">
               Favorites
             </span>
-            <h4 className="font-headline text-xl italic text-orange-900">Save services for quick rebooking</h4>
+            <h4 className="font-headline text-xl italic text-rose-900">Save services for quick rebooking</h4>
             <p className="mt-2 text-sm text-stitch-on-surface-variant">
               Heart services from the catalog to see them here.
             </p>

@@ -24,14 +24,14 @@ export function BookingFlowChrome({
     >
       <Link
         href="/"
-        className="font-headline text-2xl italic text-orange-900 transition-opacity hover:opacity-90"
+        className="font-headline text-2xl italic text-rose-900 transition-opacity hover:opacity-90"
       >
         {SITE_NAME}
       </Link>
       <nav className="hidden items-center gap-8 md:flex">
         <Link
           href="/services"
-          className="font-headline font-medium tracking-tight text-orange-700/70 transition-colors hover:text-orange-900"
+          className="font-headline font-medium tracking-tight text-rose-700/70 transition-colors hover:text-rose-900"
         >
           Services
         </Link>
@@ -40,15 +40,15 @@ export function BookingFlowChrome({
           className={cn(
             "font-headline font-medium tracking-tight transition-colors",
             variant === "booking" || variant === "payment"
-              ? "border-b-2 border-orange-800 font-bold text-orange-800"
-              : "text-orange-700/70 hover:text-orange-900"
+              ? "border-b-2 border-rose-800 font-bold text-rose-800"
+              : "text-rose-700/70 hover:text-rose-900"
           )}
         >
           Booking
         </Link>
         <Link
           href="/customer"
-          className="font-headline font-medium tracking-tight text-orange-700/70 transition-colors hover:text-orange-900"
+          className="font-headline font-medium tracking-tight text-rose-700/70 transition-colors hover:text-rose-900"
         >
           Dashboard
         </Link>

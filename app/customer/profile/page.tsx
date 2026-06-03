@@ -21,7 +21,7 @@ export default async function CustomerProfilePage() {
         <span className="text-[10px] font-bold uppercase tracking-widest text-stitch-secondary">
           Profile
         </span>
-        <h1 className="font-headline text-3xl text-orange-900 md:text-4xl">Customer profile</h1>
+        <h1 className="font-headline text-3xl text-rose-900 md:text-4xl">Customer profile</h1>
         <p className="mt-2 max-w-xl text-sm text-stitch-on-surface-variant">
           Live profile data synced from your Supabase account.
         </p>
@@ -31,20 +31,20 @@ export default async function CustomerProfilePage() {
         <dl className="grid gap-4 sm:grid-cols-2">
           <div>
             <dt className="text-xs font-bold uppercase tracking-widest text-stitch-outline">Full name</dt>
-            <dd className="mt-1 text-sm text-stitch-on-surface">{profile?.full_name?.trim() || "—"}</dd>
+            <dd className="mt-1 text-sm text-stitch-on-surface">{profile?.full_name?.trim() || "â€”"}</dd>
           </div>
           <div>
             <dt className="text-xs font-bold uppercase tracking-widest text-stitch-outline">Email</dt>
-            <dd className="mt-1 text-sm text-stitch-on-surface">{user?.email ?? "—"}</dd>
+            <dd className="mt-1 text-sm text-stitch-on-surface">{user?.email ?? "â€”"}</dd>
           </div>
           <div>
             <dt className="text-xs font-bold uppercase tracking-widest text-stitch-outline">Phone</dt>
-            <dd className="mt-1 text-sm text-stitch-on-surface">{profile?.phone?.trim() || "—"}</dd>
+            <dd className="mt-1 text-sm text-stitch-on-surface">{profile?.phone?.trim() || "â€”"}</dd>
           </div>
           <div>
             <dt className="text-xs font-bold uppercase tracking-widest text-stitch-outline">Avatar URL</dt>
             <dd className="mt-1 break-all text-sm text-stitch-on-surface">
-              {profile?.avatar_url?.trim() || "—"}
+              {profile?.avatar_url?.trim() || "â€”"}
             </dd>
           </div>
         </dl>

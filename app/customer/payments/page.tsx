@@ -22,7 +22,7 @@ export default async function CustomerPaymentsPage() {
         <span className="text-[10px] font-bold uppercase tracking-widest text-stitch-secondary">
           Billing
         </span>
-        <h1 className="font-headline text-3xl text-orange-900 md:text-4xl">Payment status</h1>
+        <h1 className="font-headline text-3xl text-rose-900 md:text-4xl">Payment status</h1>
         <p className="mt-2 max-w-xl text-sm text-stitch-on-surface-variant">
           Per-appointment payment records from your bookings. Data is read from appointments and payments
           in Supabase.
@@ -41,16 +41,16 @@ export default async function CustomerPaymentsPage() {
               className="flex flex-col gap-4 rounded-2xl border border-stitch-outline-variant/15 bg-stitch-surface-container-lowest p-5 sm:flex-row sm:items-center sm:justify-between"
             >
               <div>
-                <h2 className="font-headline text-lg text-orange-900">{row.serviceName}</h2>
+                <h2 className="font-headline text-lg text-rose-900">{row.serviceName}</h2>
                 <p className="mt-1 text-sm text-stitch-on-surface-variant">
-                  {formatAppointmentDateShort(row.startAt)} · {appointmentStatusLabel(row.status)}
+                  {formatAppointmentDateShort(row.startAt)} Â· {appointmentStatusLabel(row.status)}
                 </p>
                 <ul className="mt-3 space-y-1 text-sm text-stitch-on-surface-variant">
                   <li>Payment: {paymentVerificationLabel(row.paymentVerification)}</li>
                   {row.paymentMethod ? (
                     <li>Method: {paymentMethodLabel(row.paymentMethod)}</li>
                   ) : (
-                    <li>Method: —</li>
+                    <li>Method: â€”</li>
                   )}
                   {row.paymentReference ? <li>Reference: {row.paymentReference}</li> : null}
                 </ul>

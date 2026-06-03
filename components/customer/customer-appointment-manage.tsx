@@ -53,7 +53,7 @@ export function CustomerAppointmentManage(props: { row: CustomerAppointmentRow }
           <span className="text-[10px] font-bold uppercase tracking-widest text-stitch-secondary">
             {appointmentStatusLabel(row.status)}
           </span>
-          <h1 className="mt-2 font-headline text-3xl text-orange-900">{summary.serviceName}</h1>
+          <h1 className="mt-2 font-headline text-3xl text-rose-900">{summary.serviceName}</h1>
           <p className="mt-3 flex flex-wrap items-center gap-2 text-stitch-on-surface-variant">
             <MaterialIcon name="schedule" />
             {formatAppointmentWhen(row.start_at)}
@@ -65,7 +65,7 @@ export function CustomerAppointmentManage(props: { row: CustomerAppointmentRow }
           ) : null}
 
           <div className="mt-8 border-t border-stitch-outline-variant/20 pt-8">
-            <h2 className="font-headline text-lg text-orange-900">Payment</h2>
+            <h2 className="font-headline text-lg text-rose-900">Payment</h2>
             {pay ? (
               <ul className="mt-3 space-y-2 text-sm text-stitch-on-surface-variant">
                 <li>Status: {paymentVerificationLabel(pay.verification_status)}</li>
@@ -87,14 +87,14 @@ export function CustomerAppointmentManage(props: { row: CustomerAppointmentRow }
           </div>
 
           <div className="mt-10 rounded-xl bg-stitch-surface-container-low p-6">
-            <h2 className="font-headline text-lg text-orange-900">Changes & cancellations</h2>
+            <h2 className="font-headline text-lg text-rose-900">Changes & cancellations</h2>
             <p className="mt-2 text-sm text-stitch-on-surface-variant">
               Need to reschedule or cancel? Our team can update your appointment. In a future release you
               will be able to request changes directly from this screen.
             </p>
-            <p className="mt-4 text-sm font-medium text-orange-900">
+            <p className="mt-4 text-sm font-medium text-rose-900">
               Contact us with your booking reference:{" "}
-              <span className="font-mono text-sm">{row.id.slice(0, 8)}…</span>
+              <span className="font-mono text-sm">{row.id.slice(0, 8)}â€¦</span>
             </p>
           </div>
         </div>

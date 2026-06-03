@@ -18,28 +18,28 @@ function PaymentMobileNav() {
     <nav className="fixed bottom-0 left-0 z-50 flex w-full items-center justify-around rounded-t-3xl bg-stitch-surface/80 px-4 pb-6 pt-3 shadow-nav-up backdrop-blur-xl md:hidden">
       <Link
         href="/"
-        className="flex flex-col items-center justify-center text-orange-800/50"
+        className="flex flex-col items-center justify-center text-rose-800/50"
       >
         <MaterialIcon name="home" />
         <span className="mt-1 font-body text-[10px] uppercase tracking-[0.1rem]">Home</span>
       </Link>
       <Link
         href="/services"
-        className="flex flex-col items-center justify-center text-orange-800/50"
+        className="flex flex-col items-center justify-center text-rose-800/50"
       >
         <MaterialIcon name="spa" />
         <span className="mt-1 font-body text-[10px] uppercase tracking-[0.1rem]">Services</span>
       </Link>
       <Link
         href="/payment-instructions"
-        className="flex flex-col items-center justify-center rounded-2xl bg-orange-100 px-4 py-1 text-orange-900"
+        className="flex flex-col items-center justify-center rounded-2xl bg-rose-100 px-4 py-1 text-rose-900"
       >
         <MaterialIcon name="event_note" />
         <span className="mt-1 font-body text-[10px] uppercase tracking-[0.1rem]">Bookings</span>
       </Link>
       <Link
         href="/customer"
-        className="flex flex-col items-center justify-center text-orange-800/50"
+        className="flex flex-col items-center justify-center text-rose-800/50"
       >
         <MaterialIcon name="person" />
         <span className="mt-1 font-body text-[10px] uppercase tracking-[0.1rem]">Profile</span>
@@ -244,7 +244,7 @@ export function PaymentSanctuaryView() {
                   <div>
                     <h4 className="font-bold text-stitch-primary">Calming Note</h4>
                     <p className="text-sm leading-relaxed text-stitch-on-primary-fixed-variant">
-                      Payment verification typically takes 5–10 minutes. You will receive a
+                      Payment verification typically takes 5â€“10 minutes. You will receive a
                       confirmation SMS and email once your slot is secured.
                     </p>
                   </div>
@@ -255,7 +255,7 @@ export function PaymentSanctuaryView() {
         </div>
       </main>
 
-      <footer className="mt-20 bg-stitch-surface-container-low text-orange-900">
+      <footer className="mt-20 bg-stitch-surface-container-low text-rose-900">
         <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-8 py-16 font-body text-sm leading-relaxed md:grid-cols-4">
           <div className="md:col-span-1">
             <span className="mb-4 block font-headline text-2xl italic">Dusab MakeOver</span>
@@ -267,17 +267,17 @@ export function PaymentSanctuaryView() {
             <h4 className="mb-4 text-xs font-bold uppercase tracking-widest">Navigation</h4>
             <ul className="space-y-2 opacity-70">
               <li>
-                <Link href="/services" className="transition-colors hover:text-orange-700">
+                <Link href="/services" className="transition-colors hover:text-rose-700">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/booking" className="transition-colors hover:text-orange-700">
+                <Link href="/booking" className="transition-colors hover:text-rose-700">
                   Booking
                 </Link>
               </li>
               <li>
-                <Link href="/customer" className="transition-colors hover:text-orange-700">
+                <Link href="/customer" className="transition-colors hover:text-rose-700">
                   Dashboard
                 </Link>
               </li>
@@ -287,12 +287,12 @@ export function PaymentSanctuaryView() {
             <h4 className="mb-4 text-xs font-bold uppercase tracking-widest">Legal</h4>
             <ul className="space-y-2 opacity-70">
               <li>
-                <Link href="/privacy" className="transition-colors hover:text-orange-700">
+                <Link href="/privacy" className="transition-colors hover:text-rose-700">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="transition-colors hover:text-orange-700">
+                <Link href="/terms" className="transition-colors hover:text-rose-700">
                   Terms of Service
                 </Link>
               </li>
@@ -302,12 +302,12 @@ export function PaymentSanctuaryView() {
             <h4 className="mb-4 text-xs font-bold uppercase tracking-widest">Support</h4>
             <ul className="space-y-2 opacity-70">
               <li>
-                <Link href="/contact" className="transition-colors hover:text-orange-700">
+                <Link href="/contact" className="transition-colors hover:text-rose-700">
                   Contact Us
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="transition-colors hover:text-orange-700">
+                <Link href="/careers" className="transition-colors hover:text-rose-700">
                   Careers
                 </Link>
               </li>
@@ -315,7 +315,7 @@ export function PaymentSanctuaryView() {
           </div>
         </div>
         <div className="mx-auto max-w-7xl border-t border-stitch-outline-variant/10 px-8 py-8 text-center text-xs tracking-widest opacity-60">
-          © {new Date().getFullYear()} {SITE_NAME}. THE DIGITAL SANCTUARY.
+          Â© {new Date().getFullYear()} {SITE_NAME}. THE DIGITAL SANCTUARY.
         </div>
       </footer>
 

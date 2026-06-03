@@ -27,7 +27,7 @@ export default async function FavoritesPage() {
         <span className="text-[10px] font-bold uppercase tracking-widest text-stitch-secondary">
           Saved for you
         </span>
-        <h1 className="font-headline text-3xl text-orange-900 md:text-4xl">Favorites</h1>
+        <h1 className="font-headline text-3xl text-rose-900 md:text-4xl">Favorites</h1>
         <p className="mt-2 max-w-xl text-sm text-stitch-on-surface-variant">
           Services you have saved for quick access. Data comes from your account in the database.
         </p>
@@ -66,12 +66,12 @@ export default async function FavoritesPage() {
                   )}
                 </div>
                 <div className="flex flex-1 flex-col p-5">
-                  <h2 className="font-headline text-lg text-orange-900">{s.name}</h2>
+                  <h2 className="font-headline text-lg text-rose-900">{s.name}</h2>
                   <p className="mt-1 text-xs text-stitch-on-surface-variant line-clamp-2">
-                    {s.description ?? "—"}
+                    {s.description ?? "â€”"}
                   </p>
                   <p className="mt-3 text-sm font-bold text-stitch-primary">
-                    {formatGhs(Number(s.price_ghs))} · {s.duration_minutes} min
+                    {formatGhs(Number(s.price_ghs))} Â· {s.duration_minutes} min
                   </p>
                   <div className="mt-4 flex flex-wrap gap-3">
                     <Link

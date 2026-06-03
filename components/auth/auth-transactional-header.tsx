@@ -19,7 +19,7 @@ export function AuthTransactionalHeader({
   const back = (
     <button
       type="button"
-      className="scale-95 text-orange-900 transition-transform duration-300 hover:opacity-70 dark:text-orange-200"
+      className="scale-95 text-rose-900 transition-transform duration-300 hover:opacity-70 dark:text-rose-200"
       aria-label="Go back"
       onClick={() => router.back()}
     >
@@ -28,7 +28,7 @@ export function AuthTransactionalHeader({
   );
 
   const title = (
-    <span className="font-headline text-2xl italic text-orange-900 dark:text-orange-100">
+    <span className="font-headline text-2xl italic text-rose-900 dark:text-rose-100">
       {EDITORIAL_RADIANCE}
     </span>
   );
@@ -43,7 +43,7 @@ export function AuthTransactionalHeader({
       >
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4">
           {back}
-          <span className="font-headline text-2xl tracking-tighter italic text-orange-900">
+          <span className="font-headline text-2xl tracking-tighter italic text-rose-900">
             {EDITORIAL_RADIANCE}
           </span>
           <div className="w-10" aria-hidden />

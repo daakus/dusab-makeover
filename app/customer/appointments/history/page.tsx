@@ -16,7 +16,7 @@ export default async function AppointmentHistoryPage() {
         <span className="text-[10px] font-bold uppercase tracking-widest text-stitch-secondary">
           Appointments
         </span>
-        <h1 className="font-headline text-3xl text-orange-900 md:text-4xl">History</h1>
+        <h1 className="font-headline text-3xl text-rose-900 md:text-4xl">History</h1>
         <p className="mt-2 max-w-xl text-sm text-stitch-on-surface-variant">
           Past visits and cancelled bookings linked to your profile.
         </p>
