@@ -344,7 +344,7 @@ export function AdminOverviewView() {
         </div>
         <div className="self-end text-right md:col-span-2">
           <p className="text-sm leading-relaxed opacity-70">
-            Â© {new Date().getFullYear()} Dusab MakeOver. Kumasi, Ghana.
+            © {new Date().getFullYear()} Dusab MakeOver. Kumasi, Ghana.
           </p>
         </div>
       </footer>

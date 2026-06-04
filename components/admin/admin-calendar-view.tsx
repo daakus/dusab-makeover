@@ -242,7 +242,7 @@ export function AdminCalendarView() {
                                   <div>
                                     <h5 className="font-display text-lg text-stitch-on-surface">{a.title}</h5>
                                     <p className="text-xs text-stitch-on-surface-variant">
-                                      Pending Confirmation â€¢ {a.timeLabel}
+                                      Pending Confirmation • {a.timeLabel}
                                     </p>
                                   </div>
                                 </div>

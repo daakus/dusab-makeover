@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { addDays, format, parse, startOfDay, isAfter, isBefore } from "date-fns";
 import { useRouter } from "next/navigation";
@@ -230,7 +230,7 @@ export function BookingSanctuaryView(props: {
                           <h3 className="font-headline text-lg text-rose-900">{s.title}</h3>
                           <p className="mt-1 line-clamp-2 text-xs text-stitch-on-surface-variant">{s.description}</p>
                           <p className="mt-2 text-sm font-bold text-stitch-primary">
-                            GHS {s.priceGhs.toFixed(0)} Â· {s.durationMins} min
+                            GHS {s.priceGhs.toFixed(0)} · {s.durationMins} min
                           </p>
                         </div>
                         <MaterialIcon name={on ? "check_circle" : "radio_button_unchecked"} className="text-stitch-primary" />
@@ -298,7 +298,7 @@ export function BookingSanctuaryView(props: {
                 <div>
                   <p className="mb-2 text-xs font-bold uppercase tracking-widest text-stitch-secondary">Time</p>
                   {slotsLoading ? (
-                    <p className="text-sm text-stitch-on-surface-variant">Loading slotsâ€¦</p>
+                    <p className="text-sm text-stitch-on-surface-variant">Loading slots…</p>
                   ) : !dateStr ? (
                     <p className="text-sm text-stitch-on-surface-variant">Choose a date first.</p>
                   ) : slots.length === 0 ? (
@@ -330,7 +330,7 @@ export function BookingSanctuaryView(props: {
                     onChange={(e) => setNotes(e.target.value)}
                     rows={3}
                     className="w-full rounded-xl border border-stitch-outline-variant bg-stitch-surface px-3 py-2 text-sm"
-                    placeholder="Allergies, preferencesâ€¦"
+                    placeholder="Allergies, preferences…"
                   />
                 </div>
               </div>
@@ -376,7 +376,7 @@ export function BookingSanctuaryView(props: {
                 </li>
               </ul>
               <p className="mt-2 text-xs text-stitch-on-surface-variant">
-                {dateStr && time ? `${format(parse(dateStr, "yyyy-MM-dd", new Date()), "PPP")} Â· ${time}` : "â€”"}
+                {dateStr && time ? `${format(parse(dateStr, "yyyy-MM-dd", new Date()), "PPP")} · ${time}` : "—"}
               </p>
             </div>
 
@@ -431,7 +431,7 @@ export function BookingSanctuaryView(props: {
                 onClick={handleSubmit}
                 className="rounded-full bg-gradient-to-br from-stitch-primary to-stitch-primary-container px-10 py-4 text-sm font-bold uppercase tracking-widest text-stitch-on-primary disabled:opacity-40"
               >
-                {submitting ? "Submittingâ€¦" : "Confirm appointment"}
+                {submitting ? "Submitting…" : "Confirm appointment"}
               </button>
             </div>
           </section>

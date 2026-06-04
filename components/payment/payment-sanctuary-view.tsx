@@ -244,7 +244,7 @@ export function PaymentSanctuaryView() {
                   <div>
                     <h4 className="font-bold text-stitch-primary">Calming Note</h4>
                     <p className="text-sm leading-relaxed text-stitch-on-primary-fixed-variant">
-                      Payment verification typically takes 5â€“10 minutes. You will receive a
+                      Payment verification typically takes 5–10 minutes. You will receive a
                       confirmation SMS and email once your slot is secured.
                     </p>
                   </div>
@@ -315,7 +315,7 @@ export function PaymentSanctuaryView() {
           </div>
         </div>
         <div className="mx-auto max-w-7xl border-t border-stitch-outline-variant/10 px-8 py-8 text-center text-xs tracking-widest opacity-60">
-          Â© {new Date().getFullYear()} {SITE_NAME}. THE DIGITAL SANCTUARY.
+          © {new Date().getFullYear()} {SITE_NAME}. THE DIGITAL SANCTUARY.
         </div>
       </footer>
 

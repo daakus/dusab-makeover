@@ -31,20 +31,20 @@ export default async function CustomerProfilePage() {
         <dl className="grid gap-4 sm:grid-cols-2">
           <div>
             <dt className="text-xs font-bold uppercase tracking-widest text-stitch-outline">Full name</dt>
-            <dd className="mt-1 text-sm text-stitch-on-surface">{profile?.full_name?.trim() || "â€”"}</dd>
+            <dd className="mt-1 text-sm text-stitch-on-surface">{profile?.full_name?.trim() || "—"}</dd>
           </div>
           <div>
             <dt className="text-xs font-bold uppercase tracking-widest text-stitch-outline">Email</dt>
-            <dd className="mt-1 text-sm text-stitch-on-surface">{user?.email ?? "â€”"}</dd>
+            <dd className="mt-1 text-sm text-stitch-on-surface">{user?.email ?? "—"}</dd>
           </div>
           <div>
             <dt className="text-xs font-bold uppercase tracking-widest text-stitch-outline">Phone</dt>
-            <dd className="mt-1 text-sm text-stitch-on-surface">{profile?.phone?.trim() || "â€”"}</dd>
+            <dd className="mt-1 text-sm text-stitch-on-surface">{profile?.phone?.trim() || "—"}</dd>
           </div>
           <div>
             <dt className="text-xs font-bold uppercase tracking-widest text-stitch-outline">Avatar URL</dt>
             <dd className="mt-1 break-all text-sm text-stitch-on-surface">
-              {profile?.avatar_url?.trim() || "â€”"}
+              {profile?.avatar_url?.trim() || "—"}
             </dd>
           </div>
         </dl>

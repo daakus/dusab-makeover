@@ -127,7 +127,7 @@ export function HomeFooter() {
         </p>
       </div>
       <div className="border-t border-stitch-outline-variant/10 pt-12 text-center text-xs opacity-50 md:col-span-4">
-        Â© {new Date().getFullYear()} {SITE_NAME}. The Digital Sanctuary.
+        © {new Date().getFullYear()} {SITE_NAME}. The Digital Sanctuary.
       </div>
     </footer>
   );

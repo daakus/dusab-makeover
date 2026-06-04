@@ -94,7 +94,7 @@ export function CustomerAppointmentManage(props: { row: CustomerAppointmentRow }
             </p>
             <p className="mt-4 text-sm font-medium text-rose-900">
               Contact us with your booking reference:{" "}
-              <span className="font-mono text-sm">{row.id.slice(0, 8)}â€¦</span>
+              <span className="font-mono text-sm">{row.id.slice(0, 8)}…</span>
             </p>
           </div>
         </div>

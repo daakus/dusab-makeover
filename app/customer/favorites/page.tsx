@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿﻿import Image from "next/image";
 import Link from "next/link";
 import { removeFavoriteService } from "@/app/actions/customer";
 import { MaterialIcon } from "@/components/home/material-icon";
@@ -58,7 +58,7 @@ export default async function FavoritesPage() {
               >
                 <div className="relative h-40 w-full bg-stitch-surface-container-low">
                   {s.image_url ? (
-                    <Image src={s.image_url} alt="" fill className="object-cover" sizes="(max-width: 640px) 100vw, 50vw" />
+                    <Image src={s.image_url} alt="—" fill className="object-cover" sizes="(max-width: 640px) 100vw, 50vw" />
                   ) : (
                     <div className="flex h-full items-center justify-center text-stitch-outline">
                       <MaterialIcon name="spa" className="text-4xl" />
@@ -68,10 +68,10 @@ export default async function FavoritesPage() {
                 <div className="flex flex-1 flex-col p-5">
                   <h2 className="font-headline text-lg text-rose-900">{s.name}</h2>
                   <p className="mt-1 text-xs text-stitch-on-surface-variant line-clamp-2">
-                    {s.description ?? "â€”"}
+                    {s.description ?? "—"}
                   </p>
                   <p className="mt-3 text-sm font-bold text-stitch-primary">
-                    {formatGhs(Number(s.price_ghs))} Â· {s.duration_minutes} min
+                    {formatGhs(Number(s.price_ghs))} · {s.duration_minutes} min
                   </p>
                   <div className="mt-4 flex flex-wrap gap-3">
                     <Link

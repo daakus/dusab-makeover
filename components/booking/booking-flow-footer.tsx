@@ -63,7 +63,7 @@ export function BookingFlowFooter() {
         </div>
         <div className="flex items-center justify-between border-t border-stitch-outline-variant/20 pt-12 md:col-span-4">
           <p className="font-body text-sm opacity-70">
-            Â© {new Date().getFullYear()} {SITE_NAME}. The Digital Sanctuary.
+            © {new Date().getFullYear()} {SITE_NAME}. The Digital Sanctuary.
           </p>
           <div className="flex gap-6 text-stitch-outline">
             <MaterialIcon name="share" className="cursor-pointer hover:text-stitch-primary" />

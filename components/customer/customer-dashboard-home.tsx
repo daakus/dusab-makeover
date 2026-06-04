@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { MaterialIcon } from "@/components/home/material-icon";
 import { formatAppointmentWhen, formatAppointmentDateShort, paymentVerificationLabel } from "@/lib/customer/format";
@@ -14,7 +14,7 @@ export interface CustomerDashboardHomeProps {
 export function CustomerDashboardHome({ firstName, upcoming, recentPast }: CustomerDashboardHomeProps) {
   const subtitle = upcoming
     ? `Your next visit is ${formatAppointmentWhen(upcoming.startAt)}.`
-    : "No upcoming appointment yetâ€”book a service when youâ€™re ready.";
+    : "No upcoming appointment yet — book a service when you're ready.";
 
   return (
     <>
@@ -142,7 +142,7 @@ export function CustomerDashboardHome({ firstName, upcoming, recentPast }: Custo
                         <h4 className="font-bold text-rose-900">{row.serviceName}</h4>
                         <p className="text-xs text-stitch-on-surface-variant">
                           {formatAppointmentDateShort(row.startAt)}
-                          {row.stylistName ? ` â€¢ ${row.stylistName}` : ""}
+                          {row.stylistName ? ` • ${row.stylistName}` : ""}
                         </p>
                       </div>
                     </div>

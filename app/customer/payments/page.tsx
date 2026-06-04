@@ -43,14 +43,14 @@ export default async function CustomerPaymentsPage() {
               <div>
                 <h2 className="font-headline text-lg text-rose-900">{row.serviceName}</h2>
                 <p className="mt-1 text-sm text-stitch-on-surface-variant">
-                  {formatAppointmentDateShort(row.startAt)} Â· {appointmentStatusLabel(row.status)}
+                  {formatAppointmentDateShort(row.startAt)} · {appointmentStatusLabel(row.status)}
                 </p>
                 <ul className="mt-3 space-y-1 text-sm text-stitch-on-surface-variant">
                   <li>Payment: {paymentVerificationLabel(row.paymentVerification)}</li>
                   {row.paymentMethod ? (
                     <li>Method: {paymentMethodLabel(row.paymentMethod)}</li>
                   ) : (
-                    <li>Method: â€”</li>
+                    <li>Method: —</li>
                   )}
                   {row.paymentReference ? <li>Reference: {row.paymentReference}</li> : null}
                 </ul>
