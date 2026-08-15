@@ -7,7 +7,7 @@ type CookiePair = {
   options?: unknown;
 };
 
-const protectedPrefixes = ["/customer", "/admin", "/staff"];
+const protectedPrefixes = ["/customer", "/admin"];
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;

@@ -1,9 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 import { SITE_NAME } from "@/lib/constants/site";
 
 const links = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/bridal", label: "Bridal" },
   { href: "/contact", label: "Contact" },
   { href: "/payment-instructions", label: "Payments" },
   { href: "/login", label: "Sign in" },
@@ -15,7 +17,16 @@ export function PublicFooter() {
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="flex flex-col gap-8 md:flex-row md:justify-between">
           <div>
-            <p className="font-display text-2xl font-semibold">{SITE_NAME}</p>
+            <p className="flex items-center gap-2 font-display text-2xl font-semibold">
+              <Image
+                src="/images/logo/dusab-icon.png"
+                alt=""
+                width={32}
+                height={32}
+                className="h-8 w-8 object-contain"
+              />
+              {SITE_NAME}
+            </p>
             <p className="mt-2 max-w-sm text-sm text-brand-bg/80">
               Premium beauty and wellness in Ghana. Book online and pay with
               MoMo.

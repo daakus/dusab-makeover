@@ -42,7 +42,7 @@ export function WhyChooseUs() {
         </div>
         <div>
           <h2 className="mb-12 font-headline text-5xl leading-tight text-stitch-on-surface">
-            The <i className="italic">Dusab MakeOver</i> Difference
+            The <i className="italic">Dusab Beauty Palour</i> Difference
           </h2>
           <div className="space-y-12">
             {points.map((p) => (

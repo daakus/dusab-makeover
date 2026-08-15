@@ -8,6 +8,7 @@ import { MaterialIcon } from "@/components/home/material-icon";
 const items = [
   { href: "/", label: "Home", icon: "home" },
   { href: "/services", label: "Services", icon: "spa" },
+  { href: "/bridal", label: "Bridal", icon: "favorite" },
   { href: "/booking", label: "Bookings", icon: "event_note" },
   { href: "/customer", label: "Profile", icon: "person" },
 ] as const;

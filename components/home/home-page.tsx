@@ -1,3 +1,4 @@
+import { BridalPromo } from "@/components/home/bridal-promo";
 import { DirectConsultation } from "@/components/home/direct-consultation";
 import { FeaturedServices } from "@/components/home/featured-services";
 import { HomeFooter } from "@/components/home/home-footer";
@@ -17,6 +18,7 @@ export function HomePageView() {
       <main className="pb-28 md:pb-0">
         <HomeHero />
         <FeaturedServices />
+        <BridalPromo />
         <DirectConsultation />
         <WhyChooseUs />
         <Testimonials />

@@ -7,9 +7,7 @@ import {
   ClipboardList,
   CreditCard,
   Heart,
-  Home,
   LayoutDashboard,
-  MessageSquare,
   Scissors,
   Settings,
   Users,
@@ -44,12 +42,4 @@ export const adminNav: DashboardNavItem[] = [
   { href: "/admin/reports", label: "Reports", icon: BarChart3 },
   { href: "/admin/approvals", label: "Approvals", icon: ClipboardList },
   { href: "/admin/notifications", label: "Notifications", icon: Bell },
-];
-
-export const staffNav: DashboardNavItem[] = [
-  { href: "/staff", label: "Overview", icon: Home },
-  { href: "/staff/appointments", label: "Assigned", icon: Calendar },
-  { href: "/staff/schedule", label: "Daily schedule", icon: CalendarDays },
-  { href: "/staff/notes", label: "Customer notes", icon: MessageSquare },
-  { href: "/staff/availability", label: "Availability", icon: Settings },
 ];

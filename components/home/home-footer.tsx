@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { MaterialIcon } from "@/components/home/material-icon";
 import { SITE_NAME } from "@/lib/constants/site";
@@ -6,8 +7,15 @@ export function HomeFooter() {
   return (
     <footer className="mx-auto mt-20 grid w-full max-w-7xl grid-cols-1 gap-12 px-8 py-16 md:grid-cols-4">
       <div>
-        <span className="mb-4 block font-headline text-2xl italic text-rose-900">
-          Dusab MakeOver.
+        <span className="mb-4 flex items-center gap-2 font-headline text-2xl italic text-rose-900">
+          <Image
+            src="/images/logo/dusab-icon.png"
+            alt=""
+            width={32}
+            height={32}
+            className="h-8 w-8 object-contain"
+          />
+          Dusab Beauty Palour.
         </span>
         <p className="mb-6 font-body text-sm leading-relaxed text-stitch-on-surface-variant">
           Professional makeup, hairstyling & frontal installations. Kumasi, Ghana.
@@ -44,6 +52,14 @@ export function HomeFooter() {
               className="opacity-70 transition-all duration-300 hover:text-rose-700 hover:opacity-100"
             >
               Services
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/bridal"
+              className="opacity-70 transition-all duration-300 hover:text-rose-700 hover:opacity-100"
+            >
+              Bridal
             </Link>
           </li>
           <li>

@@ -1,4 +1,4 @@
-# Dusab MakeOver
+# Dusab Beauty Palour
 
 Production-oriented Next.js 14 (App Router) booking platform for a Ghana-based salon: public marketing site, customer dashboard, admin portal, and staff tools. Payments are manual (MTN MoMo, Vodafone Cash, AirtelTigo Money) with screenshot upload and admin verification.
 
@@ -46,7 +46,7 @@ Production-oriented Next.js 14 (App Router) booking platform for a Ghana-based s
 
 - `app/(marketing)` — public pages (home, about, services, gallery, contact, booking flow, payment instructions).
 - `app/(auth)` — login, register, forgot password.
-- `app/customer`, `app/admin`, `app/staff` — role-scoped dashboards (protected by middleware + `requireRole`).
+- `app/customer`, `app/admin` — role-scoped dashboards (protected by middleware + `requireRole`).
 - `components/` — UI primitives, layout shells, sections, booking and payment blocks.
 - `supabase/` — browser/server clients; SQL under `supabase/migrations/`.
 - `types/` — shared TypeScript models and enums.

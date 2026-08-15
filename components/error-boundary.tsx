@@ -22,7 +22,7 @@ export function ErrorBoundaryFallback({
         Something went wrong
       </h2>
       <p className="max-w-md text-sm text-muted-foreground">
-        Please try again. If the problem continues, contact Dusab MakeOver support.
+        Please try again. If the problem continues, contact Dusab Beauty Palour support.
       </p>
       <Button type="button" onClick={reset}>
         Try again

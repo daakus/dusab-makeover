@@ -258,7 +258,7 @@ export function PaymentSanctuaryView() {
       <footer className="mt-20 bg-stitch-surface-container-low text-rose-900">
         <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-8 py-16 font-body text-sm leading-relaxed md:grid-cols-4">
           <div className="md:col-span-1">
-            <span className="mb-4 block font-headline text-2xl italic">Dusab MakeOver</span>
+            <span className="mb-4 block font-headline text-2xl italic">Dusab Beauty Palour</span>
             <p className="mb-6 opacity-70">
               Professional makeup artistry, hairstyling & frontal installations in Kumasi.
             </p>

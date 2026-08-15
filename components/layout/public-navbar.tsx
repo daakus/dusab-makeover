@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -11,6 +12,7 @@ const NAV = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/bridal", label: "Bridal" },
   { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
   { href: "/booking", label: "Book" },
@@ -23,7 +25,14 @@ export function PublicNavbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-brand-border/80 bg-brand-bg-secondary/95 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <Link href="/" className="font-display text-xl font-semibold text-brand-heading">
+        <Link href="/" className="flex items-center gap-2 font-display text-xl font-semibold text-brand-heading">
+          <Image
+            src="/images/logo/dusab-icon.png"
+            alt=""
+            width={32}
+            height={32}
+            className="h-8 w-8 object-contain"
+          />
           {SITE_NAME}
         </Link>
         <nav className="hidden items-center gap-1 md:flex">

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Dusab MakeOver — professional beauty studio in Kumasi, Ghana.",
+  description: "Dusab Beauty Palour — professional beauty studio in Kumasi, Ghana.",
 };
 
 export default function AboutPage() {
@@ -12,7 +12,7 @@ export default function AboutPage() {
         Our story
       </h1>
       <p className="text-muted-foreground leading-relaxed">
-        Dusab MakeOver brings professional makeup artistry, hairstyling, and
+        Dusab Beauty Palour brings professional makeup artistry, hairstyling, and
         frontal wig installations to Kumasi and beyond. Whether you visit our
         studio or join one of our online training sessions, your location is
         never a barrier to looking and feeling your best.

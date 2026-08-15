@@ -13,5 +13,11 @@ export default async function ManageAppointmentPage({ params }: { params: { id: 
   const row = await fetchAppointmentForCustomer(supabase, user.id, params.id);
   if (!row) notFound();
 
-  return <CustomerAppointmentManage row={row} />;
+  const { data: review } = await supabase
+    .from("reviews")
+    .select("rating, comment")
+    .eq("appointment_id", params.id)
+    .maybeSingle();
+
+  return <CustomerAppointmentManage row={row} review={review ?? null} />;
 }

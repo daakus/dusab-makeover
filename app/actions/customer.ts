@@ -73,6 +73,63 @@ export async function removeFavoriteService(formData: FormData): Promise<void> {
   revalidatePath("/customer");
 }
 
+export async function submitReview(
+  _prev: CustomerActionState | undefined,
+  formData: FormData
+): Promise<CustomerActionState> {
+  const appointmentId = String(formData.get("appointment_id") ?? "").trim();
+  const rating = Number(formData.get("rating"));
+  const comment = String(formData.get("comment") ?? "").trim();
+
+  if (!appointmentId) return { error: "Missing appointment." };
+  if (!Number.isInteger(rating) || rating < 1 || rating > 5) {
+    return { error: "Please choose a rating from 1 to 5." };
+  }
+
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "You must be signed in." };
+
+  const { data: appointment } = await supabase
+    .from("appointments")
+    .select("id, status, end_at")
+    .eq("id", appointmentId)
+    .eq("user_id", user.id)
+    .maybeSingle();
+
+  if (!appointment) return { error: "Appointment not found." };
+  if (appointment.status !== "booking_confirmed" || new Date(appointment.end_at) > new Date()) {
+    return { error: "You can only review a visit after it's complete." };
+  }
+
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("full_name")
+    .eq("id", user.id)
+    .maybeSingle();
+
+  const { error } = await supabase.from("reviews").insert({
+    appointment_id: appointmentId,
+    user_id: user.id,
+    customer_name: profile?.full_name?.trim() || "Customer",
+    rating,
+    comment: comment || null,
+  });
+
+  if (error) {
+    if (error.code === "23505") {
+      return { error: "You've already reviewed this visit." };
+    }
+    return { error: error.message };
+  }
+
+  revalidatePath(`/customer/appointments/${appointmentId}/manage`);
+  revalidatePath("/");
+  return { success: "Thanks for sharing your experience!" };
+}
+
 export async function addFavoriteService(serviceId: string): Promise<CustomerActionState> {
   if (!serviceId) {
     return { error: "Missing service." };

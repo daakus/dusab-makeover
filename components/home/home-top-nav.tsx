@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -9,6 +10,7 @@ import { MaterialIcon } from "@/components/home/material-icon";
 
 const links = [
   { href: "/services", label: "Services" },
+  { href: "/bridal", label: "Bridal" },
   { href: "/booking", label: "Booking" },
   { href: "/customer", label: "Dashboard" },
 ] as const;
@@ -44,8 +46,15 @@ export function HomeTopNav({ className }: HomeTopNavProps) {
       >
         <Link
           href="/"
-          className="font-headline text-2xl italic text-rose-900 transition-opacity hover:opacity-90"
+          className="flex items-center gap-2 font-headline text-2xl italic text-rose-900 transition-opacity hover:opacity-90"
         >
+          <Image
+            src="/images/logo/dusab-icon.png"
+            alt=""
+            width={36}
+            height={36}
+            className="h-9 w-9 object-contain"
+          />
           {SITE_NAME}
         </Link>
 

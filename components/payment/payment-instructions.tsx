@@ -19,20 +19,20 @@ const defaultOptions: MobileMoneyOption[] = [
   {
     id: "mtn",
     label: "MTN MoMo",
-    merchantName: "Dusab MakeOver",
+    merchantName: "Dusab Beauty Palour",
     number: "054 600 6627",
     note: "Use your booking reference in the message if prompted.",
   },
   {
     id: "vodafone",
     label: "Vodafone Cash",
-    merchantName: "Dusab MakeOver",
+    merchantName: "Dusab Beauty Palour",
     number: "0XX XXX XXXX",
   },
   {
     id: "tigo",
     label: "AirtelTigo Money",
-    merchantName: "Dusab MakeOver",
+    merchantName: "Dusab Beauty Palour",
     number: "0XX XXX XXXX",
   },
 ];

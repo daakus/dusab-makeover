@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
-import { upsertAdminService } from "@/app/actions/admin-services";
+import { useMemo, useRef, useState } from "react";
+import { upsertAdminService, uploadServiceImage } from "@/app/actions/admin-services";
 import { useAdminSearch } from "@/components/admin/admin-search-context";
 import { MaterialIcon } from "@/components/home/material-icon";
 import { cn } from "@/lib/utils";
@@ -55,6 +55,9 @@ export function AdminServicesView(props: {
   const [services, setServices] = useState<AdminServiceRecord[]>(initialServices);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const filtered = useMemo(() => {
     return services.filter((s) => {
@@ -77,13 +80,34 @@ export function AdminServicesView(props: {
   function openEdit(s: AdminServiceRecord) {
     setDraft({ ...s });
     setSaveError(null);
+    setUploadError(null);
     setDrawerOpen(true);
   }
 
   function openNew() {
     setDraft({ ...emptyDraft });
     setSaveError(null);
+    setUploadError(null);
     setDrawerOpen(true);
+  }
+
+  async function handleImageUpload(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploading(true);
+    setUploadError(null);
+    const formData = new FormData();
+    formData.set("image", file);
+    const res = await uploadServiceImage(formData);
+    setUploading(false);
+    if (res?.error) {
+      setUploadError(res.error);
+      return;
+    }
+    if (res?.url) {
+      setDraft((d) => ({ ...d, imageSrc: res.url! }));
+    }
+    if (fileInputRef.current) fileInputRef.current.value = "";
   }
 
   return (
@@ -435,29 +459,57 @@ export function AdminServicesView(props: {
 
             <div className="space-y-2 pt-4">
               <label className="signature-label block text-[10px] text-stitch-secondary">
-                Image URL <span className="normal-case opacity-50">(optional — leave blank to auto-pick)</span>
+                Photo <span className="normal-case opacity-50">(optional — leave blank to auto-pick)</span>
               </label>
-              <input
-                type="url"
-                placeholder="https://images.unsplash.com/..."
-                className="w-full border-b-2 border-stitch-outline-variant bg-transparent py-2 text-sm outline-none focus:border-stitch-primary focus:ring-0"
-                value={draft.imageSrc}
-                onChange={(e) => setDraft((d) => ({ ...d, imageSrc: e.target.value }))}
-              />
               {draft.imageSrc ? (
-                <div className="relative mt-2 h-28 w-full overflow-hidden rounded-lg bg-stone-100">
+                <div className="relative mt-2 h-32 w-full overflow-hidden rounded-lg bg-stone-100">
                   <img
                     src={draft.imageSrc}
                     alt="Preview"
                     className="h-full w-full object-cover"
                     onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                   />
+                  <button
+                    type="button"
+                    onClick={() => setDraft((d) => ({ ...d, imageSrc: "" }))}
+                    className="absolute right-2 top-2 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white hover:bg-black/80"
+                    aria-label="Remove photo"
+                  >
+                    <MaterialIcon name="close" size="sm" className="!text-base" />
+                  </button>
                 </div>
-              ) : (
+              ) : null}
+              <div className="flex items-center gap-3">
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  className="w-full text-sm text-stone-500 file:mr-3 file:rounded-full file:border-0 file:bg-stitch-surface-container-low file:px-4 file:py-2 file:text-xs file:font-bold file:text-stitch-on-surface hover:file:bg-stone-200"
+                />
+                {uploading ? <span className="shrink-0 text-xs text-stone-400">Uploading…</span> : null}
+              </div>
+              {uploadError ? (
+                <p className="text-[10px] text-red-600 dark:text-red-400">{uploadError}</p>
+              ) : null}
+              <details className="pt-1">
+                <summary className="cursor-pointer text-[10px] text-stone-400 hover:text-stone-600">
+                  Or paste an image URL instead
+                </summary>
+                <input
+                  type="url"
+                  placeholder="https://images.unsplash.com/..."
+                  className="mt-2 w-full border-b-2 border-stitch-outline-variant bg-transparent py-2 text-sm outline-none focus:border-stitch-primary focus:ring-0"
+                  value={draft.imageSrc}
+                  onChange={(e) => setDraft((d) => ({ ...d, imageSrc: e.target.value }))}
+                />
+              </details>
+              {!draft.imageSrc ? (
                 <p className="text-[10px] text-stone-400">
-                  A relevant image will be chosen automatically based on the service name and category.
+                  A stock image will be chosen automatically based on the service name and category until you
+                  upload a real photo.
                 </p>
-              )}
+              ) : null}
             </div>
             {saveError ? (
               <p className="text-sm text-red-600 dark:text-red-400">{saveError}</p>

@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   keywords: [
     "frontal installation",
     "one on one tutorial",
-    "dusab beauty",
+    "dusab beauty palour",
     "online training",
     "makeup artist kumasi",
     "hairstyling kumasi",

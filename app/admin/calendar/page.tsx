@@ -39,7 +39,7 @@ export default async function AdminCalendarPage() {
                     {(a.staff as { display_name?: string | null } | null)?.display_name ?? "Unassigned"} · {a.status}
                   </p>
                 </div>
-                {a.status === "awaiting_approval" || a.status === "pending" ? (
+                {a.status === "payment_submitted" ? (
                   <BookingApprovalActions
                     appointmentId={a.id}
                     customerName={profile?.full_name ?? "Customer"}

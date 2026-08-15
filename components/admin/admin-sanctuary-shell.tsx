@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -55,13 +56,26 @@ export function AdminSanctuaryShell(props: {
         )}
       >
         <div className="mb-10 px-2">
-          <Link href="/admin" className="block" onClick={() => setMobileOpen(false)}>
-            <h1 className="font-display text-2xl tracking-tight text-stone-900 dark:text-stone-100">
-              Editorial Radiance
-            </h1>
-            <p className="signature-label mt-1 text-xs text-stone-400 dark:text-stone-500">
-              Admin Sanctuary
-            </p>
+          <Link
+            href="/admin"
+            className="flex items-center gap-3"
+            onClick={() => setMobileOpen(false)}
+          >
+            <Image
+              src="/images/logo/dusab-icon.png"
+              alt=""
+              width={40}
+              height={40}
+              className="h-10 w-10 object-contain"
+            />
+            <div>
+              <h1 className="font-display text-2xl tracking-tight text-stone-900 dark:text-stone-100">
+                Editorial Radiance
+              </h1>
+              <p className="signature-label mt-1 text-xs text-stone-400 dark:text-stone-500">
+                Admin Sanctuary
+              </p>
+            </div>
           </Link>
         </div>
 
@@ -127,18 +141,11 @@ export function AdminSanctuaryShell(props: {
 
       <div className="md:ml-72">
         <AdminSearchProvider key={pathname}>
-          <div className="flex items-center gap-3 border-b border-stitch-outline-variant/20 bg-stitch-surface px-4 py-3 md:hidden">
-            <button
-              type="button"
-              onClick={() => setMobileOpen(true)}
-              className="rounded-lg p-2 text-stone-600 hover:bg-stone-100 dark:hover:bg-stone-800"
-              aria-label="Open menu"
-            >
-              <MaterialIcon name="menu" size="sm" />
-            </button>
-            <span className="font-display text-lg text-stone-900 dark:text-stone-100">Admin</span>
-          </div>
-          <AdminTopBar displayName={user.displayName} avatarUrl={user.avatarUrl} />
+          <AdminTopBar
+            displayName={user.displayName}
+            avatarUrl={user.avatarUrl}
+            onMenuClick={() => setMobileOpen(true)}
+          />
           {children}
         </AdminSearchProvider>
       </div>

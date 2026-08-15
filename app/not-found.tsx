@@ -6,7 +6,7 @@ export default function NotFound() {
     <div className="flex min-h-dvh flex-col items-center justify-center gap-4 bg-brand-bg px-4 text-center">
       <h1 className="font-display text-4xl text-brand-heading">404</h1>
       <p className="max-w-md text-muted-foreground">
-        This page could not be found. Return to Dusab MakeOver to continue your
+        This page could not be found. Return to Dusab Beauty Palour to continue your
         journey.
       </p>
       <Button asChild>

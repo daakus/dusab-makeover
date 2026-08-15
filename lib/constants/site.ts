@@ -1,4 +1,4 @@
-export const SITE_NAME = "Dusab MakeOver";
+export const SITE_NAME = "Dusab Beauty Palour";
 export const SITE_DESCRIPTION =
   "Professional makeup artistry, hairstyling & frontal wig installations in Kumasi. Book one-on-one tutorials or join our online training — your location is never a barrier.";
 export const SITE_URL =

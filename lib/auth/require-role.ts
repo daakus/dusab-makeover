@@ -23,7 +23,6 @@ export async function requireRole(allowed: RoleSlug[], nextPath: string) {
 
   if (error || !slug || !allowed.includes(slug)) {
     if (slug === "admin") redirect("/admin");
-    if (slug === "staff") redirect("/staff");
     redirect("/customer");
   }
 

@@ -126,6 +126,7 @@ export interface Review {
   id: string;
   appointment_id: string;
   user_id: string;
+  customer_name: string | null;
   rating: number;
   comment: string | null;
   created_at: string;

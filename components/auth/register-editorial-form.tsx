@@ -168,14 +168,14 @@ export function RegisterEditorialForm(props: {
                 <label className="cursor-pointer text-sm leading-tight text-stitch-on-surface-variant" htmlFor="terms">
                   I agree to the{" "}
                   <Link
-                    href="/contact"
+                    href="/terms"
                     className="font-semibold text-stitch-secondary underline decoration-stitch-outline-variant underline-offset-4 transition-all hover:decoration-stitch-secondary"
                   >
                     Terms of Service
                   </Link>{" "}
                   and{" "}
                   <Link
-                    href="/contact"
+                    href="/privacy"
                     className="font-semibold text-stitch-secondary underline decoration-stitch-outline-variant underline-offset-4 transition-all hover:decoration-stitch-secondary"
                   >
                     Privacy Policy

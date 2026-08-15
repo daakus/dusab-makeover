@@ -12,7 +12,7 @@ export default async function AdminApprovalsPage() {
         profiles!appointments_user_id_fkey(full_name, phone),
         appointment_services(price_at_booking, services(name))
       `)
-      .in("status", ["awaiting_approval", "pending"])
+      .in("status", ["payment_submitted"])
       .order("start_at", { ascending: true })
       .limit(50),
     supabase

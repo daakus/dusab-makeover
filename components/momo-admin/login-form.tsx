@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import Image from "next/image";
 import { adminLogin } from "@/app/momo-admin/actions";
 import { useRouter } from "next/navigation";
 
@@ -23,8 +24,15 @@ export function AdminLoginForm() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-pink-50 to-rose-100 px-4">
       <div className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-lg">
+        <Image
+          src="/images/logo/dusab-icon.png"
+          alt=""
+          width={48}
+          height={48}
+          className="mx-auto mb-3 h-12 w-12 object-contain"
+        />
         <h1 className="mb-1 text-center font-serif text-2xl font-bold text-gray-900">
-          Dusab MakeOver 💄
+          Dusab Beauty Palour 💄
         </h1>
         <p className="mb-6 text-center text-sm text-gray-500">Admin Dashboard</p>
 

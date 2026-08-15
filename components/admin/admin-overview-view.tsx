@@ -318,7 +318,7 @@ export function AdminOverviewView() {
       <footer className="mt-12 grid w-full max-w-7xl grid-cols-1 gap-12 bg-stitch-surface-container-low px-8 py-16 transition-all duration-300 ease-out md:mx-auto md:grid-cols-4">
         <div className="md:col-span-1">
           <span className="mb-4 block font-display text-2xl italic text-rose-900 dark:text-rose-200">
-            Dusab MakeOver
+            Dusab Beauty Palour
           </span>
           <p className="text-sm leading-relaxed opacity-70">Analytics Dashboard &amp; Management Portal.</p>
         </div>
@@ -344,7 +344,7 @@ export function AdminOverviewView() {
         </div>
         <div className="self-end text-right md:col-span-2">
           <p className="text-sm leading-relaxed opacity-70">
-            © {new Date().getFullYear()} Dusab MakeOver. Kumasi, Ghana.
+            © {new Date().getFullYear()} Dusab Beauty Palour. Kumasi, Ghana.
           </p>
         </div>
       </footer>

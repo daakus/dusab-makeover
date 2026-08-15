@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { CustomerReviewForm } from "@/components/customer/customer-review-form";
 import { MaterialIcon } from "@/components/home/material-icon";
 import {
   appointmentStatusLabel,
@@ -18,10 +19,14 @@ function paymentRow(
   return p;
 }
 
-export function CustomerAppointmentManage(props: { row: CustomerAppointmentRow }) {
-  const { row } = props;
+export function CustomerAppointmentManage(props: {
+  row: CustomerAppointmentRow;
+  review: { rating: number; comment: string | null } | null;
+}) {
+  const { row, review } = props;
   const summary = normalizeCustomerAppointment(row);
   const pay = paymentRow(row.payments);
+  const isCompleted = row.status === "booking_confirmed" && new Date(row.end_at) <= new Date();
 
   return (
     <div className="mx-auto max-w-2xl">
@@ -85,6 +90,36 @@ export function CustomerAppointmentManage(props: { row: CustomerAppointmentRow }
               Payment status overview
             </Link>
           </div>
+
+          {isCompleted ? (
+            <div className="mt-8 border-t border-stitch-outline-variant/20 pt-8">
+              <h2 className="font-headline text-lg text-rose-900">Your review</h2>
+              {review ? (
+                <div className="mt-3">
+                  <div className="flex text-stitch-primary">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <MaterialIcon
+                        key={i}
+                        name="star"
+                        filled={i < review.rating}
+                        className={`!text-lg ${i >= review.rating ? "opacity-30" : ""}`}
+                      />
+                    ))}
+                  </div>
+                  {review.comment ? (
+                    <p className="mt-2 text-sm text-stitch-on-surface-variant">{review.comment}</p>
+                  ) : null}
+                </div>
+              ) : (
+                <div className="mt-3">
+                  <p className="mb-4 text-sm text-stitch-on-surface-variant">
+                    How was your visit? Your feedback helps other clients and our team.
+                  </p>
+                  <CustomerReviewForm appointmentId={row.id} />
+                </div>
+              )}
+            </div>
+          ) : null}
 
           <div className="mt-10 rounded-xl bg-stitch-surface-container-low p-6">
             <h2 className="font-headline text-lg text-rose-900">Changes & cancellations</h2>

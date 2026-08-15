@@ -10,10 +10,10 @@ export interface BookingWhatsAppPayload {
   receiptUrl: string;
 }
 
-/** Vendor alert — sent TO Dusab MakeOver artist when customer submits a booking */
+/** Vendor alert — sent TO Dusab Beauty Palour artist when customer submits a booking */
 export function buildBookingWhatsAppUrl(payload: BookingWhatsAppPayload): string {
   const text =
-    `*🚨 NEW BOOKING ALERT - DUSAB MAKEOVER*\n` +
+    `*🚨 NEW BOOKING ALERT - DUSAB BEAUTY PALOUR*\n` +
     `-----------------------------------------\n` +
     `*Customer Name:* ${payload.customerName}\n` +
     `*Phone Number:* ${payload.phoneNumber}\n` +
@@ -41,7 +41,7 @@ export function buildConfirmationWhatsAppUrl(payload: {
   const intlPhone = payload.customerPhone.replace(/^0/, "233");
 
   const text =
-    `*✅ BOOKING CONFIRMED - DUSAB MAKEOVER*\n` +
+    `*✅ BOOKING CONFIRMED - DUSAB BEAUTY PALOUR*\n` +
     `-----------------------------------------\n` +
     `Hi ${payload.customerName}! 🎉\n` +
     `\n` +
@@ -54,9 +54,9 @@ export function buildConfirmationWhatsAppUrl(payload: {
     `\n` +
     `We look forward to serving you. Please arrive 10 minutes early.\n` +
     `\n` +
-    `Thank you for choosing *Dusab MakeOver*! 💄\n` +
+    `Thank you for choosing *Dusab Beauty Palour*! 💄\n` +
     `\n` +
-    `*Dusab MakeOver | Kumasi | @dusab_makeover*`;
+    `*Dusab Beauty Palour | Kumasi | @dusab_beauty*`;
 
   return `https://wa.me/${intlPhone}?text=${encodeURIComponent(text)}`;
 }

@@ -4,7 +4,7 @@ import { SITE_NAME } from "@/lib/constants/site";
 
 export const metadata: Metadata = {
   title: `Careers | ${SITE_NAME}`,
-  description: "Join the Dusab MakeOver team in Kumasi.",
+  description: "Join the Dusab Beauty Palour team in Kumasi.",
 };
 
 export default function CareersPage() {

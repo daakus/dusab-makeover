@@ -170,7 +170,7 @@ export function MomoBookingForm() {
       <div className="rounded-xl bg-pink-50 p-4 text-sm text-pink-800">
         <p className="font-bold">💳 MoMo Payment Instructions</p>
         <p className="mt-1">
-          Send payment to <span className="font-bold">0546006627</span> (Dusab MakeOver), then
+          Send payment to <span className="font-bold">0546006627</span> (Dusab Beauty Palour), then
           upload your screenshot receipt below.
         </p>
       </div>

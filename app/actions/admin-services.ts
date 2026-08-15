@@ -4,6 +4,8 @@ import { revalidatePath } from "next/cache";
 import { createClient } from "@/supabase/server";
 import { getDefaultServiceImage } from "@/lib/services/default-service-images";
 
+const SERVICE_IMAGES_BUCKET = "service-images";
+
 export interface AdminServiceInput {
   id?: string;
   name: string;
@@ -32,6 +34,27 @@ async function assertAdmin() {
   const { data: role } = await supabase.rpc("current_role_slug");
   const isAdmin = role === "admin" || role === "super_admin";
   return isAdmin ? { supabase, ok: true as const } : { supabase, ok: false as const };
+}
+
+export async function uploadServiceImage(formData: FormData) {
+  const { supabase, ok } = await assertAdmin();
+  if (!ok) return { error: "Unauthorized." };
+
+  const file = formData.get("image") as File | null;
+  if (!file || file.size === 0) return { error: "Please choose a photo to upload." };
+  if (!file.type.startsWith("image/")) return { error: "Only image files are supported." };
+
+  const fileExt = file.name.split(".").pop() || "jpg";
+  const path = `${Date.now()}-${crypto.randomUUID()}.${fileExt}`;
+  const bytes = await file.arrayBuffer();
+
+  const { error: uploadErr } = await supabase.storage
+    .from(SERVICE_IMAGES_BUCKET)
+    .upload(path, bytes, { contentType: file.type, upsert: false });
+  if (uploadErr) return { error: uploadErr.message };
+
+  const { data: publicUrlData } = supabase.storage.from(SERVICE_IMAGES_BUCKET).getPublicUrl(path);
+  return { success: true as const, url: publicUrlData.publicUrl };
 }
 
 export async function upsertAdminService(input: AdminServiceInput) {

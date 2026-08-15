@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { isAdminAuthed, getBookings, adminLogout } from "./actions";
 import { AdminLoginForm } from "@/components/momo-admin/login-form";
 import { BookingRow } from "@/components/momo-admin/booking-row";
@@ -21,9 +22,18 @@ export default async function MomoAdminPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Top bar */}
       <header className="flex items-center justify-between bg-pink-600 px-6 py-4 shadow">
-        <div>
-          <p className="text-xs font-bold uppercase tracking-widest text-pink-200">Admin Dashboard</p>
-          <h1 className="font-serif text-xl font-bold text-white">Dusab MakeOver 💄</h1>
+        <div className="flex items-center gap-3">
+          <Image
+            src="/images/logo/dusab-icon.png"
+            alt=""
+            width={36}
+            height={36}
+            className="h-9 w-9 object-contain"
+          />
+          <div>
+            <p className="text-xs font-bold uppercase tracking-widest text-pink-200">Admin Dashboard</p>
+            <h1 className="font-serif text-xl font-bold text-white">Dusab Beauty Palour 💄</h1>
+          </div>
         </div>
         <form action={adminLogout}>
           <button

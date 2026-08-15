@@ -48,9 +48,7 @@ export async function signInWithPassword(
     target === "/payment-instructions" || target.startsWith("/payment-instructions?");
   if (role === "admin" && !target.startsWith("/admin") && !preserveForBookingPayment) {
     target = "/admin";
-  } else if (role === "staff" && !target.startsWith("/staff") && !preserveForBookingPayment) {
-    target = "/staff";
-  } else if (role === "customer" && (target.startsWith("/admin") || target.startsWith("/staff"))) {
+  } else if (role !== "admin" && (target.startsWith("/admin") || target.startsWith("/staff"))) {
     target = "/customer";
   }
 

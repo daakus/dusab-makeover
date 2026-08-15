@@ -51,8 +51,15 @@ export function CustomerSanctuaryShell(props: {
     <div className="min-h-dvh bg-stitch-surface text-stitch-on-surface">
       <aside className="fixed z-40 hidden h-screen w-64 flex-col bg-stitch-surface-container-low py-8 pr-4 md:flex">
         <div className="mb-12 px-8">
-          <Link href="/" className="font-headline text-2xl italic text-rose-900">
-            Dusab MakeOver
+          <Link href="/" className="flex items-center gap-2 font-headline text-2xl italic text-rose-900">
+            <Image
+              src="/images/logo/dusab-icon.png"
+              alt=""
+              width={36}
+              height={36}
+              className="h-9 w-9 object-contain"
+            />
+            Dusab Beauty Palour
           </Link>
         </div>
         <nav className="flex-1 space-y-2">

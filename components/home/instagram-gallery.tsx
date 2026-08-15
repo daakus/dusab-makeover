@@ -6,7 +6,7 @@ export function InstagramGallery() {
     <section className="bg-stitch-surface-container px-4 py-24">
       <div className="mx-auto mb-16 max-w-7xl text-center">
         <p className="mb-4 text-sm font-bold uppercase tracking-[0.3rem] text-stitch-primary">
-          @dusab_makeover
+          @dusab_beauty
         </p>
         <h2 className="font-headline text-4xl text-stitch-on-surface">
           Follow Our Journey

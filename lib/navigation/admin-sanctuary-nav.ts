@@ -42,6 +42,8 @@ export const adminSanctuarySecondaryNav: AdminSanctuaryNavItem[] = [
   { href: "/admin/bookings", label: "Bookings", icon: "event_note" },
   { href: "/admin/revenue", label: "Revenue", icon: "payments" },
   { href: "/admin/staff", label: "Staff", icon: "badge" },
+  { href: "/admin/gallery", label: "Gallery", icon: "photo_library" },
+  { href: "/admin/reviews", label: "Reviews", icon: "reviews" },
   { href: "/admin/payments", label: "Payments", icon: "account_balance_wallet" },
   { href: "/admin/reports", label: "Reports", icon: "analytics" },
   { href: "/admin/approvals", label: "Approvals", icon: "verified" },
