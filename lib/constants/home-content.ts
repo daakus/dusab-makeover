@@ -1,10 +1,8 @@
 /** Stitch mockup image URLs and copy (editable). */
 
 export const HOME_IMAGES = {
-  heroDesktop:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBGx65cL8BIrDUzPxHUnIMIjd2Df0FS0f3nOo-br9as7LTH6UruXAiVlx29iQ1hasaZKvOyxCkfHDqLH_VEqRUmZCRclBHaEWbCgpgOMsJYMpztV_3IbXp0UkyAoAnSz2GfHcgLb0CUhluiRqt7kOd6KRZfc_THdtVxCH_W534wW6zTfryh-vs6RSpI1BWaYdaHw_XUZi7kfbyw1qrnlhJXAXB3ktazfV-doc3pM3VWiAMVhm8BuOeEqrDDsl7HyNT-Lu9p9K7kHBw9",
-  heroMobile:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuB-ivD5mYuRPgdB-43Ra4A1FHMhLQOFCQJCoqllRDR7HV_XANEx3lQZiHLlD4sEX2oKEfsWFO9biT1TWp1Yd3OHGkQhRtWDXu4h7rUp4lbbhbbXVG3ZsIShZGUX1SsYwmwMaQKzPWoY-RpEFKqLc4-Tk1x8wAN6HJQ5Kuiv_vaA-0tHl3DPucwokU8Kh7llo0lIq6TAXaDyQSD4kh3WP8uTr69sdVhn3g56LSG_mZpRvWB1Z7j_8IoVt01kQMuwJi3whukZXR55JGdp",
+  heroDesktop: "/images/hero/hero-bridal-desktop.jpg",
+  heroMobile: "/images/hero/hero-bridal-mobile.jpg",
   bentoHair:
     "https://lh3.googleusercontent.com/aida-public/AB6AXuDDvh-JJA0TfS1ITXemsn-s_hRBZY4yCXyxt732Eh6iaFZzhXoAj7jlGhplOHEz974VaMHT26wSUA_h8z05ZYHVxcLAgAjZSgY6vcyX-irK7PIvmjdcn3B690r7Qs6x27OAwtl91WtBcEK9m-ZB0_kGmlQZscQCZ1DbhPrsUgu6b4lxUQ0UfDdwUV62UGfj-7ph7TU3W5U5sVHrbF1wHicc3TTUSK89cS5NyoJzKzvmHHwVqvwMaj-oOKFAYwNphZWz29tuMjFa4Nrk-",
   bentoNails:

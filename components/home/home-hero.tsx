@@ -8,17 +8,15 @@ export function HomeHero() {
     <>
       {/* Desktop hero */}
       <header className="relative hidden min-h-[920px] items-center overflow-hidden pt-20 md:flex">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src={HOME_IMAGES.heroDesktop}
-            alt="Luxury salon interior with warm lighting"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-stitch-surface via-stitch-surface/60 to-transparent" />
-        </div>
+        <Image
+          src={HOME_IMAGES.heroDesktop}
+          alt="Bride in a blush veil, smiling — Dusab Beauty Palour bridal makeup"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-stitch-surface via-stitch-surface/60 to-transparent" />
         <div className="container relative z-10 mx-auto px-8">
           <div className="max-w-2xl">
             <span className="mb-6 inline-block font-label text-sm font-semibold uppercase tracking-[0.2rem] text-stitch-secondary">
@@ -55,14 +53,14 @@ export function HomeHero() {
       <section className="relative flex h-[min(751px,90dvh)] w-full flex-col justify-end overflow-hidden px-8 pb-12 pt-20 md:hidden">
         <Image
           src={HOME_IMAGES.heroMobile}
-          alt="Radiant woman in a luxury spa setting"
+          alt="Bride in a blush veil, smiling — Dusab Beauty Palour bridal makeup"
           fill
           priority
-          className="-z-10 object-cover"
+          className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-stitch-background/90 via-stitch-background/20 to-transparent" />
-        <div className="max-w-md">
+        <div className="absolute inset-0 bg-gradient-to-t from-stitch-background/90 via-stitch-background/20 to-transparent" />
+        <div className="relative z-10 max-w-md">
           <span className="mb-4 inline-block rounded-full bg-stitch-primary-fixed px-3 py-1 font-label text-[10px] font-semibold uppercase tracking-[0.2rem] text-stitch-primary">
             Premier Beauty Atelier
           </span>
