@@ -58,6 +58,9 @@ export function AdminServicesView(props: {
   const [uploading, setUploading] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [secondPriceLabel, setSecondPriceLabel] = useState("Makeup & Hairstyling");
+  const [secondPriceGhs, setSecondPriceGhs] = useState(0);
+  const isBridal = draft.category === "Bridal Services";
 
   const filtered = useMemo(() => {
     return services.filter((s) => {
@@ -81,6 +84,8 @@ export function AdminServicesView(props: {
     setDraft({ ...s });
     setSaveError(null);
     setUploadError(null);
+    setSecondPriceLabel("Makeup & Hairstyling");
+    setSecondPriceGhs(0);
     setDrawerOpen(true);
   }
 
@@ -88,6 +93,8 @@ export function AdminServicesView(props: {
     setDraft({ ...emptyDraft });
     setSaveError(null);
     setUploadError(null);
+    setSecondPriceLabel("Makeup & Hairstyling");
+    setSecondPriceGhs(0);
     setDrawerOpen(true);
   }
 
@@ -360,11 +367,30 @@ export function AdminServicesView(props: {
                 imageUrl: draft.imageSrc || null,
                 isActive: draft.isActive,
               });
-              setSaving(false);
               if (res?.error) {
+                setSaving(false);
                 setSaveError(res.error);
                 return;
               }
+
+              if (isBridal && secondPriceGhs > 0 && secondPriceLabel.trim()) {
+                const pairedRes = await upsertAdminService({
+                  name: `${draft.name} — ${secondPriceLabel.trim()}`,
+                  category: draft.category,
+                  durationMins: draft.durationMins,
+                  priceGhs: secondPriceGhs,
+                  description: draft.description,
+                  imageUrl: draft.imageSrc || null,
+                  isActive: draft.isActive,
+                });
+                if (pairedRes?.error) {
+                  setSaving(false);
+                  setSaveError(`Main price saved, but the second price failed: ${pairedRes.error}`);
+                  return;
+                }
+              }
+
+              setSaving(false);
               if (draft.id === "new") {
                 setDrawerOpen(false);
                 router.refresh();
@@ -445,6 +471,48 @@ export function AdminServicesView(props: {
                 />
               </div>
             </div>
+
+            {isBridal ? (
+              <div className="space-y-3 rounded-xl bg-stitch-surface-container-low p-4">
+                <p className="signature-label text-[10px] text-stitch-secondary">
+                  Bridal package — second price tier{" "}
+                  <span className="normal-case opacity-60">(optional)</span>
+                </p>
+                <p className="text-xs leading-relaxed text-stone-500">
+                  The price above is saved as this service (e.g. &ldquo;Makeup only&rdquo;). Rate-card
+                  packages usually also offer &ldquo;Makeup and hairstyling&rdquo; at a higher price —
+                  fill this in to create that second bookable option at the same time, named
+                  &ldquo;{draft.name || "Service name"} — {secondPriceLabel || "…"}&rdquo;.
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-1">
+                    <label className="signature-label block text-[10px] text-stitch-secondary">
+                      Label
+                    </label>
+                    <input
+                      className="w-full border-b-2 border-stitch-outline-variant bg-transparent py-2 text-sm outline-none focus:border-stitch-primary focus:ring-0"
+                      value={secondPriceLabel}
+                      onChange={(e) => setSecondPriceLabel(e.target.value)}
+                      placeholder="Makeup & Hairstyling"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <label className="signature-label block text-[10px] text-stitch-secondary">
+                      Price (GHS)
+                    </label>
+                    <input
+                      type="number"
+                      min={0}
+                      className="w-full border-b-2 border-stitch-outline-variant bg-transparent py-2 text-sm outline-none focus:border-stitch-primary focus:ring-0"
+                      value={secondPriceGhs || ""}
+                      onChange={(e) => setSecondPriceGhs(Number(e.target.value) || 0)}
+                      placeholder="e.g. 1700"
+                    />
+                  </div>
+                </div>
+              </div>
+            ) : null}
+
             <div className="space-y-2 pt-4">
               <label className="signature-label block text-[10px] text-stitch-secondary">
                 Experience Narrative

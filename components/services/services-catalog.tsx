@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
 import { MaterialIcon } from "@/components/home/material-icon";
+import { Reveal } from "@/components/ui/reveal";
 import {
   BRIDAL_FEATURE,
   DURATION_BAND_OPTIONS,
@@ -79,9 +80,9 @@ export function ServicesCatalog(props: { services: CatalogService[] }) {
             No services match these filters. Try widening your selection.
           </p>
         ) : (
-          filtered.map((service) => (
+          filtered.map((service, i) => (
+            <Reveal key={service.id} delayMs={(i % 3) * 90}>
             <article
-              key={service.id}
               className={cn(
                 "group flex flex-col overflow-hidden rounded-xl bg-stitch-surface-container-low shadow-editorial transition-all duration-500 hover:bg-stitch-surface-container-lowest",
                 service.stagger && "md:translate-y-12"
@@ -131,9 +132,11 @@ export function ServicesCatalog(props: { services: CatalogService[] }) {
                 </div>
               </div>
             </article>
+            </Reveal>
           ))
         )}
 
+        <Reveal className="lg:col-span-3">
         <div className="group mt-12 flex flex-col overflow-hidden rounded-2xl bg-stitch-primary-fixed shadow-editorial lg:col-span-3 md:flex-row">
           <div className="h-96 overflow-hidden md:w-1/2 md:h-auto">
             <div className="relative h-full min-h-[16rem] w-full md:min-h-[24rem]">
@@ -164,13 +167,14 @@ export function ServicesCatalog(props: { services: CatalogService[] }) {
               </div>
             </div>
             <Link
-              href="/booking"
+              href="/bridal"
               className="mt-8 self-start rounded-full bg-stitch-primary px-12 py-4 font-bold tracking-wide text-stitch-on-primary transition-all hover:bg-stitch-primary-container active:scale-95"
             >
-              Enquire Now
+              View Bridal Packages
             </Link>
           </div>
         </div>
+        </Reveal>
       </section>
     </>
   );

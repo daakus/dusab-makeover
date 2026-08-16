@@ -144,8 +144,8 @@ export const BRIDAL_FEATURE = {
   title: "Bridal Glam Package",
   kicker: "Your Most Beautiful Day",
   description:
-    "A complete bridal experience — consultation, trial session, and stunning wedding day makeup. Crafted to last and photographed to perfection.",
-  priceFromGhs: 800,
-  image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&auto=format&fit=crop",
-  imageAlt: "Bride in full glam makeup",
+    "Silver, Golden, and Outside-Kumasi bridal packages — makeup only or makeup with hairstyling, for your traditional or white wedding. See the full rate card and book your date.",
+  priceFromGhs: 1300,
+  image: "/images/bridal/bridal-8-hallway-bouquet.jpg",
+  imageAlt: "Bride in an elegant white gown holding a bouquet — Dusab Beauty Palour bridal glam",
 } as const;

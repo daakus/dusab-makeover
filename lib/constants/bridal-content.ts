@@ -1,68 +1,3 @@
-export interface BridalPackageOption {
-  label: string;
-  includes: string[];
-}
-
-export interface BridalPackage {
-  name: string;
-  options: BridalPackageOption[];
-}
-
-export const BRIDAL_PACKAGES: BridalPackage[] = [
-  {
-    name: "Silver Package",
-    options: [
-      {
-        label: "One Session (Traditional or White Wedding)",
-        includes: ["Makeup only", "Makeup and hairstyling"],
-      },
-      {
-        label: "2-Session, One-Day Event (Traditional/White Wedding)",
-        includes: ["Makeup only", "Makeup and hairstyling"],
-      },
-    ],
-  },
-  {
-    name: "Golden Package",
-    options: [
-      {
-        label: "2-Day Event, One Session (Traditional/White Wedding)",
-        includes: ["Makeup only", "Makeup and hairstyling"],
-      },
-      {
-        label: "2-Session (Traditional/White Wedding)",
-        includes: ["Makeup only", "Makeup and hairstyling"],
-      },
-    ],
-  },
-  {
-    name: "Outside Kumasi Deals",
-    options: [
-      {
-        label: "One-Day Event (Traditional/White Wedding)",
-        includes: ["Makeup only", "Makeup and hairstyling"],
-      },
-      {
-        label: "2-Day Event (Traditional/White Wedding)",
-        includes: ["Makeup only", "Makeup and hairstyling"],
-      },
-    ],
-  },
-  {
-    name: "Extra Services",
-    options: [
-      {
-        label: "Baby Christening",
-        includes: ["Makeup only", "Makeup and hairstyling"],
-      },
-      {
-        label: "Wig Making",
-        includes: ["Frontal wig", "Closure"],
-      },
-    ],
-  },
-];
-
 export const BRIDAL_NOTES = [
   "All packages listed are for the bride. Bridesmaid, mother-of-the-bride, and family glam are available — ask us for a quote when you enquire.",
   "Transportation to and from your venue is arranged separately with you and is not part of a package.",
@@ -111,8 +46,11 @@ export interface BridalPhoto {
 
 export const BRIDAL_PHOTOS: BridalPhoto[] = [
   { src: "/images/bridal/bridal-1-veil-joy.jpg", alt: "Bride in a blush veil, laughing with joy — Dusab Beauty Palour bridal makeup" },
+  { src: "/images/bridal/bridal-8-hallway-bouquet.jpg", alt: "Bride in an elegant white gown holding a bouquet — Dusab Beauty Palour" },
   { src: "/images/bridal/bridal-2-garden-glam.jpg", alt: "Bride with soft glam makeup in a garden setting — Dusab Beauty Palour" },
   { src: "/images/bridal/bridal-3-lace-pearl.jpg", alt: "Bride in a pearl-beaded lace gown holding a bouquet — Dusab Beauty Palour" },
+  { src: "/images/bridal/bridal-6-updo-glam.jpg", alt: "Bride with an elegant updo and soft glam makeup — Dusab Beauty Palour" },
   { src: "/images/bridal/bridal-4-classic-updo.jpg", alt: "Bride with a classic updo and soft glam makeup — Dusab Beauty Palour" },
+  { src: "/images/bridal/bridal-7-glam-closeup.jpg", alt: "Close-up bridal glam makeup with gold earrings — Dusab Beauty Palour" },
   { src: "/images/bridal/bridal-5-bouquet.jpg", alt: "Bride with a sleek updo, smiling — Dusab Beauty Palour" },
 ];

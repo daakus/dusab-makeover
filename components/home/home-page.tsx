@@ -10,6 +10,7 @@ import { MobileBottomNav } from "@/components/home/mobile-bottom-nav";
 import { Testimonials } from "@/components/home/testimonials";
 import { WhatsAppFloat } from "@/components/home/whatsapp-float";
 import { WhyChooseUs } from "@/components/home/why-choose-us";
+import { Reveal } from "@/components/ui/reveal";
 
 export function HomePageView() {
   return (
@@ -17,12 +18,24 @@ export function HomePageView() {
       <HomeTopNav />
       <main className="pb-28 md:pb-0">
         <HomeHero />
-        <FeaturedServices />
-        <BridalPromo />
-        <DirectConsultation />
-        <WhyChooseUs />
-        <Testimonials />
-        <InstagramGallery />
+        <Reveal>
+          <FeaturedServices />
+        </Reveal>
+        <Reveal>
+          <BridalPromo />
+        </Reveal>
+        <Reveal>
+          <DirectConsultation />
+        </Reveal>
+        <Reveal>
+          <WhyChooseUs />
+        </Reveal>
+        <Reveal>
+          <Testimonials />
+        </Reveal>
+        <Reveal>
+          <InstagramGallery />
+        </Reveal>
       </main>
       <HomeFooter />
       <MobileBottomNav />
