@@ -3,7 +3,8 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useMemo, useRef, useState } from "react";
-import { upsertAdminService, uploadServiceImage } from "@/app/actions/admin-services";
+import { toast } from "sonner";
+import { setServiceActive, upsertAdminService, uploadServiceImage } from "@/app/actions/admin-services";
 import { useAdminSearch } from "@/components/admin/admin-search-context";
 import { MaterialIcon } from "@/components/home/material-icon";
 import { cn } from "@/lib/utils";
@@ -60,7 +61,28 @@ export function AdminServicesView(props: {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [secondPriceLabel, setSecondPriceLabel] = useState("Makeup & Hairstyling");
   const [secondPriceGhs, setSecondPriceGhs] = useState(0);
+  const [togglingId, setTogglingId] = useState<string | null>(null);
   const isBridal = draft.category === "Bridal Services";
+
+  async function handleToggleActive(s: AdminServiceRecord): Promise<boolean> {
+    const nextActive = !s.isActive;
+    if (nextActive === false) {
+      const ok = window.confirm(
+        `Remove "${s.name}" from the site? It will stop showing on the booking page and services catalog. You can restore it later from here.`
+      );
+      if (!ok) return false;
+    }
+    setTogglingId(s.id);
+    const res = await setServiceActive(s.id, nextActive);
+    setTogglingId(null);
+    if (res?.error) {
+      toast.error(res.error);
+      return false;
+    }
+    setServices((prev) => prev.map((row) => (row.id === s.id ? { ...row, isActive: nextActive } : row)));
+    toast.success(nextActive ? "Service restored" : "Service removed from the site");
+    return true;
+  }
 
   const filtered = useMemo(() => {
     return services.filter((s) => {
@@ -222,7 +244,10 @@ export function AdminServicesView(props: {
               gridView ? (
                 <article
                   key={s.id}
-                  className="group rounded-xl bg-stitch-surface-container-lowest p-6 transition-all duration-500 hover:shadow-2xl hover:shadow-stitch-primary/5 dark:bg-white/95"
+                  className={cn(
+                    "group rounded-xl bg-stitch-surface-container-lowest p-6 transition-all duration-500 hover:shadow-2xl hover:shadow-stitch-primary/5 dark:bg-white/95",
+                    !s.isActive && "opacity-60"
+                  )}
                 >
                   <div className="relative mb-6 h-48 overflow-hidden rounded-lg bg-stone-100">
                     {s.imageSrc ? (
@@ -241,6 +266,11 @@ export function AdminServicesView(props: {
                     <div className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-[10px] text-stitch-on-background backdrop-blur signature-label">
                       {s.category}
                     </div>
+                    {!s.isActive ? (
+                      <div className="absolute right-4 top-4 rounded-full bg-stone-900/80 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
+                        Inactive
+                      </div>
+                    ) : null}
                   </div>
                   <div className="mb-4 flex items-start justify-between">
                     <div>
@@ -264,17 +294,26 @@ export function AdminServicesView(props: {
                     </button>
                     <button
                       type="button"
-                      className="flex h-12 w-12 items-center justify-center text-stone-300 transition-colors hover:text-destructive"
-                      aria-label="Delete service"
+                      disabled={togglingId === s.id}
+                      onClick={() => handleToggleActive(s)}
+                      className={cn(
+                        "flex h-12 w-12 items-center justify-center transition-colors disabled:opacity-50",
+                        s.isActive ? "text-stone-300 hover:text-destructive" : "text-emerald-600 hover:text-emerald-700"
+                      )}
+                      aria-label={s.isActive ? "Delete service" : "Restore service"}
+                      title={s.isActive ? "Remove from site" : "Restore"}
                     >
-                      <MaterialIcon name="delete" size="sm" />
+                      <MaterialIcon name={s.isActive ? "delete" : "restore"} size="sm" />
                     </button>
                   </div>
                 </article>
               ) : (
                 <div
                   key={s.id}
-                  className="flex flex-col gap-4 rounded-xl border border-stitch-outline-variant/30 bg-stitch-surface-container-lowest p-4 sm:flex-row sm:items-center dark:bg-white/95"
+                  className={cn(
+                    "flex flex-col gap-4 rounded-xl border border-stitch-outline-variant/30 bg-stitch-surface-container-lowest p-4 sm:flex-row sm:items-center dark:bg-white/95",
+                    !s.isActive && "opacity-60"
+                  )}
                 >
                   <div className="relative h-24 w-full shrink-0 overflow-hidden rounded-lg sm:h-20 sm:w-32">
                     {s.imageSrc ? (
@@ -286,18 +325,38 @@ export function AdminServicesView(props: {
                     )}
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="signature-label text-[10px] text-stitch-secondary">{s.category}</p>
+                    <p className="signature-label text-[10px] text-stitch-secondary">
+                      {s.category}
+                      {!s.isActive ? " · Inactive" : ""}
+                    </p>
                     <h4 className="font-display text-lg text-stitch-on-background">{s.name}</h4>
                     <p className="text-sm text-stone-500">{s.durationMins} min</p>
                   </div>
                   <p className="font-display text-lg text-stitch-primary">{formatGhs(s.priceGhs)}</p>
-                  <button
-                    type="button"
-                    onClick={() => openEdit(s)}
-                    className="rounded-full bg-stitch-surface-container-low px-4 py-2 text-sm font-semibold text-stitch-on-surface"
-                  >
-                    Edit
-                  </button>
+                  <div className="flex shrink-0 items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => openEdit(s)}
+                      className="rounded-full bg-stitch-surface-container-low px-4 py-2 text-sm font-semibold text-stitch-on-surface"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      type="button"
+                      disabled={togglingId === s.id}
+                      onClick={() => handleToggleActive(s)}
+                      className={cn(
+                        "flex h-9 w-9 items-center justify-center rounded-full transition-colors disabled:opacity-50",
+                        s.isActive
+                          ? "text-stone-400 hover:bg-red-50 hover:text-destructive"
+                          : "text-emerald-600 hover:bg-emerald-50"
+                      )}
+                      aria-label={s.isActive ? "Delete service" : "Restore service"}
+                      title={s.isActive ? "Remove from site" : "Restore"}
+                    >
+                      <MaterialIcon name={s.isActive ? "delete" : "restore"} size="sm" />
+                    </button>
+                  </div>
                 </div>
               )
             )}
@@ -597,9 +656,14 @@ export function AdminServicesView(props: {
               {draft.id !== "new" ? (
                 <button
                   type="button"
-                  className="signature-label mt-2 w-full py-4 text-xs font-bold text-stone-400 transition-colors hover:text-stitch-on-background"
+                  disabled={togglingId === draft.id}
+                  onClick={async () => {
+                    const changed = await handleToggleActive(draft);
+                    if (changed) setDraft((d) => ({ ...d, isActive: !d.isActive }));
+                  }}
+                  className="signature-label mt-2 w-full py-4 text-xs font-bold text-stone-400 transition-colors hover:text-stitch-on-background disabled:opacity-50"
                 >
-                  Archive Experience
+                  {draft.isActive ? "Archive Experience" : "Restore Experience"}
                 </button>
               ) : null}
             </div>

@@ -57,6 +57,21 @@ export async function uploadServiceImage(formData: FormData) {
   return { success: true as const, url: publicUrlData.publicUrl };
 }
 
+export async function setServiceActive(id: string, isActive: boolean) {
+  const { supabase, ok } = await assertAdmin();
+  if (!ok) return { error: "Unauthorized." };
+  if (!id) return { error: "Missing service id." };
+
+  const { error } = await supabase.from("services").update({ is_active: isActive }).eq("id", id);
+  if (error) return { error: error.message };
+
+  revalidatePath("/admin/services");
+  revalidatePath("/services");
+  revalidatePath("/booking");
+  revalidatePath("/bridal");
+  return { success: true as const };
+}
+
 export async function upsertAdminService(input: AdminServiceInput) {
   const { supabase, ok } = await assertAdmin();
   if (!ok) return { error: "Unauthorized." };
