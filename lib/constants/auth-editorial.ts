@@ -1,7 +1,6 @@
 /** Editorial imagery for transactional auth screens (Stitch). */
 export const AUTH_EDITORIAL_IMAGES = {
-  loginHero:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBmZgGiP-zs2tkxOD7M83fSIDuHgbl8EDwYoomFm9MsBvi3Ra0x7-dOg4aX7zbhL4qKCbdU0_PrRO28hQMsQQk-hvfjLKn9bMQX_c0Z9rBiaWvUhHpw5mxjsATt7crsxDAB7udTU8P1433948tydW5cu4uV055g_-RLgSTpvAiy0nKiGWZKaMrp1EIuwve5sBJk3jrHAX7WWLF9ZJYCr7pF1xHXUyRVrs9rBXUChaS6-bqAAo8TBa6mgZaGhCUcDfMWT4yENpwGZY4D",
+  loginHero: "/images/bridal/bridal-4-classic-updo.jpg",
   registerSanctuary:
     "https://lh3.googleusercontent.com/aida-public/AB6AXuDpE-Oult9nDwRJmeG1ViCTYLPwhSifGSAog-pZp5LrKyz2bhN94--13sFavormUqDyDeOVPXE6o1pOL63dZtghEGhrg7Pp4ZxXq5oYlB5XddXhaAjayLbHGEjHqW_8SIKlOrZKttT8dAfn90xHacLIkWawIjw2n1FPExkfsi2WwCXLJNwOd0HH5wxYau4iOKL718O4D1Q3w1Q_NT5MtKAFeJVxLUepl0IQAFYgt5C0mYreIdvMie_HHpC5KNZOn3rwG39UUtWjzQTT",
   forgotTexture:

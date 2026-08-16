@@ -43,7 +43,7 @@ export function LoginEditorialForm(props: { next: string; urlError?: string; def
           <div className="relative z-10 aspect-[4/5] overflow-hidden rounded-xl shadow-2xl">
             <Image
               src={AUTH_EDITORIAL_IMAGES.loginHero}
-              alt="Editorial beauty treatment"
+              alt="Dusab Beauty Palour bridal glam"
               fill
               className="object-cover"
               sizes="50vw"
