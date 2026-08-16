@@ -69,7 +69,7 @@ export default async function BridalPage() {
   return (
     <div className="bg-brand-bg">
       {/* Hero */}
-      <section className="relative flex min-h-[70vh] items-end overflow-hidden">
+      <section className="relative flex min-h-[65vh] items-end overflow-hidden">
         <Image
           src="/images/bridal/bridal-1-veil-joy.jpg"
           alt="Bride in a blush veil, laughing with joy — Dusab Beauty Palour bridal makeup"
@@ -79,7 +79,7 @@ export default async function BridalPage() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#2A1517] via-[#2A1517]/40 to-transparent" />
-        <div className="relative z-10 mx-auto w-full max-w-4xl px-4 pb-16 pt-32 text-center sm:px-6">
+        <div className="relative z-10 mx-auto w-full max-w-4xl px-4 pb-16 pt-16 text-center sm:px-6">
           <p className="signature-label mb-4 text-xs font-bold uppercase tracking-[0.25em] text-[#E9D3C6]">
             Bridal Rate Card
           </p>

@@ -1,7 +1,23 @@
 import Image from "next/image";
-import { HOME_IMAGES } from "@/lib/constants/home-content";
+import Link from "next/link";
+import { BRIDAL_PHOTOS } from "@/lib/constants/bridal-content";
+import { createClient } from "@/supabase/server";
 
-export function InstagramGallery() {
+export async function InstagramGallery() {
+  const supabase = await createClient();
+  const { data: rows } = await supabase
+    .from("gallery_images")
+    .select("id, title, image_url")
+    .eq("is_published", true)
+    .order("sort_order", { ascending: true })
+    .order("created_at", { ascending: false })
+    .limit(10);
+
+  const photos =
+    rows && rows.length > 0
+      ? rows.map((r) => ({ key: r.id, src: r.image_url, alt: r.title ?? "Dusab Beauty Palour" }))
+      : BRIDAL_PHOTOS.slice(0, 10).map((p) => ({ key: p.src, src: p.src, alt: p.alt }));
+
   return (
     <section className="bg-stitch-surface-container px-4 py-24">
       <div className="mx-auto mb-16 max-w-7xl text-center">
@@ -13,20 +29,28 @@ export function InstagramGallery() {
         </h2>
       </div>
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 md:grid-cols-5">
-        {HOME_IMAGES.gallery.map((src, i) => (
+        {photos.map((photo) => (
           <div
-            key={src}
-            className="aspect-square overflow-hidden rounded-lg"
+            key={photo.key}
+            className="relative aspect-square overflow-hidden rounded-lg"
           >
             <Image
-              src={src}
-              alt={`Gallery ${i + 1}`}
-              width={400}
-              height={400}
-              className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              sizes="(max-width: 768px) 50vw, 20vw"
+              className="object-cover transition-transform duration-500 hover:scale-105"
             />
           </div>
         ))}
+      </div>
+      <div className="mt-12 text-center">
+        <Link
+          href="/gallery"
+          className="inline-block rounded-full border border-stitch-primary/30 px-8 py-3 text-sm font-bold text-stitch-primary transition-colors hover:bg-stitch-primary hover:text-stitch-on-primary"
+        >
+          View Full Gallery
+        </Link>
       </div>
     </section>
   );
