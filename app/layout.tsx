@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope, Noto_Serif } from "next/font/google";
+import { ImageProtection } from "@/components/image-protection";
 import { Providers } from "@/components/providers";
 import { SITE_DESCRIPTION, SITE_NAME } from "@/lib/constants/site";
 import "./globals.css";
@@ -52,6 +53,7 @@ export default function RootLayout({
       <body
         className={`${manrope.variable} ${notoSerif.variable} min-h-dvh bg-background font-sans antialiased`}
       >
+        <ImageProtection />
         <Providers>{children}</Providers>
       </body>
     </html>
