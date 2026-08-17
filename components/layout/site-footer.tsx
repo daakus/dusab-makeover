@@ -36,10 +36,10 @@ const LEGAL_LINKS = [
 
 export function SiteFooter() {
   return (
-    <footer className="mt-20 w-full border-t border-stitch-outline-variant/10 bg-stitch-surface-container-low">
+    <footer className="mt-20 w-full bg-[#2A1517] text-white">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 sm:px-8 md:grid-cols-4">
         <div className="md:col-span-1">
-          <Link href="/" className="mb-4 flex items-center gap-2 font-headline text-2xl italic text-rose-900">
+          <Link href="/" className="mb-4 flex items-center gap-2 font-headline text-2xl italic text-white">
             <Image
               src="/images/logo/dusab-icon.png"
               alt=""
@@ -49,7 +49,7 @@ export function SiteFooter() {
             />
             {SITE_NAME}
           </Link>
-          <p className="mb-6 font-body text-sm leading-relaxed text-stitch-on-surface-variant">
+          <p className="mb-6 font-body text-sm leading-relaxed text-white/70">
             Professional bridal makeup, hairstyling &amp; wig installations. Kumasi, Ghana.
           </p>
           <div className="flex gap-3">
@@ -60,7 +60,7 @@ export function SiteFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-stitch-outline-variant text-stitch-on-surface-variant transition-colors hover:bg-stitch-primary hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white/80 transition-colors hover:border-stitch-gold hover:bg-stitch-gold hover:text-[#2A1517]"
               >
                 <s.icon className="h-4 w-4" />
               </a>
@@ -69,16 +69,13 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h4 className="mb-6 font-label text-xs font-bold uppercase tracking-widest text-stitch-primary">
+          <h4 className="mb-6 font-label text-xs font-bold uppercase tracking-widest text-stitch-gold">
             Quick Links
           </h4>
           <ul className="space-y-3 font-body text-sm">
             {QUICK_LINKS.map((l) => (
               <li key={l.href}>
-                <Link
-                  href={l.href}
-                  className="opacity-70 transition-all duration-300 hover:text-rose-700 hover:opacity-100"
-                >
+                <Link href={l.href} className="text-white/70 transition-all duration-300 hover:text-white">
                   {l.label}
                 </Link>
               </li>
@@ -87,16 +84,13 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h4 className="mb-6 font-label text-xs font-bold uppercase tracking-widest text-stitch-primary">
+          <h4 className="mb-6 font-label text-xs font-bold uppercase tracking-widest text-stitch-gold">
             Legal
           </h4>
           <ul className="space-y-3 font-body text-sm">
             {LEGAL_LINKS.map((l) => (
               <li key={l.href}>
-                <Link
-                  href={l.href}
-                  className="opacity-70 transition-all duration-300 hover:text-rose-700 hover:opacity-100"
-                >
+                <Link href={l.href} className="text-white/70 transition-all duration-300 hover:text-white">
                   {l.label}
                 </Link>
               </li>
@@ -105,22 +99,22 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h4 className="mb-6 font-label text-xs font-bold uppercase tracking-widest text-stitch-primary">
+          <h4 className="mb-6 font-label text-xs font-bold uppercase tracking-widest text-stitch-gold">
             Studio
           </h4>
-          <p className="mb-4 font-body text-sm leading-relaxed text-stitch-on-surface-variant">
+          <p className="mb-4 font-body text-sm leading-relaxed text-white/70">
             Kumasi, Ghana
             <br />
             0546006627
           </p>
-          <p className="font-body text-sm leading-relaxed text-stitch-on-surface-variant">
+          <p className="font-body text-sm leading-relaxed text-white/70">
             Mon – Sat: 9am – 8pm
             <br />
             Sun: 12pm – 6pm
           </p>
         </div>
       </div>
-      <div className="border-t border-stitch-outline-variant/10 px-6 py-6 text-center text-xs opacity-50 sm:px-8">
+      <div className="border-t border-white/10 px-6 py-6 text-center text-xs text-white/50 sm:px-8">
         © {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
       </div>
     </footer>

@@ -34,9 +34,9 @@ export function WhyChooseUs() {
             className="relative z-10 h-[600px] w-full rounded-xl object-cover shadow-2xl"
           />
           <div className="absolute -bottom-10 -right-10 z-20 max-w-xs rounded-xl bg-stitch-primary-container p-12 text-white shadow-xl">
-            <p className="mb-2 font-headline text-4xl italic">10k+</p>
+            <p className="mb-2 font-headline text-4xl italic">500+</p>
             <p className="text-sm font-semibold uppercase tracking-widest opacity-90">
-              Radiant Clients Served in Kumasi
+              Radiant Clients Served accross Ghana
             </p>
           </div>
         </div>
