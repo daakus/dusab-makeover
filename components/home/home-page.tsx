@@ -4,7 +4,6 @@ import { FeaturedServices } from "@/components/home/featured-services";
 import { HomeHero } from "@/components/home/home-hero";
 import { HomeTopNav } from "@/components/home/home-top-nav";
 import { InstagramGallery } from "@/components/home/instagram-gallery";
-import { MobileBookingFab } from "@/components/home/mobile-booking-fab";
 import { MobileBottomNav } from "@/components/home/mobile-bottom-nav";
 import { Testimonials } from "@/components/home/testimonials";
 import { WhatsAppFloat } from "@/components/home/whatsapp-float";
@@ -40,7 +39,6 @@ export function HomePageView() {
       <SiteFooter />
       <MobileBottomNav />
       <WhatsAppFloat />
-      <MobileBookingFab />
     </div>
   );
 }
