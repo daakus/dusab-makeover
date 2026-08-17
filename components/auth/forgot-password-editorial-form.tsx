@@ -7,6 +7,7 @@ import type { AuthActionState } from "@/app/actions/auth";
 import { requestPasswordReset } from "@/app/actions/auth";
 import { AUTH_EDITORIAL_IMAGES } from "@/lib/constants/auth-editorial";
 import { AuthTransactionalHeader } from "@/components/auth/auth-transactional-header";
+import { SiteFooter } from "@/components/layout/site-footer";
 
 const initial: AuthActionState = {};
 
@@ -84,7 +85,7 @@ export function ForgotPasswordEditorialForm() {
             <div className="absolute inset-0 bg-gradient-to-t from-stitch-background via-transparent to-transparent" />
           </div>
 
-          <footer className="flex flex-col items-center gap-6">
+          <div className="flex flex-col items-center gap-6">
             <Link
               href="/login"
               className="group flex items-center gap-2 font-bold text-stitch-secondary transition-colors hover:text-stitch-primary"
@@ -100,9 +101,10 @@ export function ForgotPasswordEditorialForm() {
               </span>
               <span className="h-px w-8 bg-stitch-outline-variant/30" />
             </div>
-          </footer>
+          </div>
         </div>
       </main>
+      <SiteFooter />
     </div>
   );
 }

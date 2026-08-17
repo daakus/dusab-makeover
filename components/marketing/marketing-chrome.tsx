@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 import { usePathname } from "next/navigation";
-import { PublicFooter } from "@/components/layout/public-footer";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { PublicNavbar } from "@/components/layout/public-navbar";
 
 export function MarketingChrome({ children }: { children: ReactNode }) {
@@ -22,7 +22,7 @@ export function MarketingChrome({ children }: { children: ReactNode }) {
     <div className="flex min-h-dvh flex-col bg-brand-bg">
       <PublicNavbar />
       <div className="flex-1">{children}</div>
-      <PublicFooter />
+      <SiteFooter />
     </div>
   );
 }

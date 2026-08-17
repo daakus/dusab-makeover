@@ -9,6 +9,7 @@ import { signInWithPassword } from "@/app/actions/auth";
 import { AUTH_EDITORIAL_IMAGES } from "@/lib/constants/auth-editorial";
 import { SITE_NAME } from "@/lib/constants/site";
 import { AuthTransactionalHeader } from "@/components/auth/auth-transactional-header";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { MaterialIcon } from "@/components/home/material-icon";
 import { cn } from "@/lib/utils";
 
@@ -184,22 +185,7 @@ export function LoginEditorialForm(props: { next: string; urlError?: string; def
         </div>
       </main>
 
-      <footer className="flex w-full max-w-6xl flex-col items-center justify-between px-6 py-12 font-label text-xs uppercase tracking-[0.2rem] text-stitch-on-surface-variant opacity-60 md:flex-row">
-        <div className="mb-4 md:mb-0">
-          {SITE_NAME} © {new Date().getFullYear()}
-        </div>
-        <div className="flex gap-8">
-          <Link href="/contact" className="transition-colors hover:text-stitch-primary">
-            Privacy
-          </Link>
-          <Link href="/contact" className="transition-colors hover:text-stitch-primary">
-            Terms
-          </Link>
-          <Link href="/contact" className="transition-colors hover:text-stitch-primary">
-            Contact
-          </Link>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

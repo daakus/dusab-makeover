@@ -1,6 +1,6 @@
 import { HomeTopNav } from "@/components/home/home-top-nav";
 import { MobileBottomNav } from "@/components/home/mobile-bottom-nav";
-import { ServicesSiteFooter } from "@/components/marketing/services-site-footer";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { ServicesCatalog } from "@/components/services/services-catalog";
 import type { CatalogService } from "@/lib/constants/services-catalog";
 
@@ -25,7 +25,7 @@ export function ServicesPageView(props: { services: CatalogService[] }) {
         </header>
         <ServicesCatalog services={services} />
       </main>
-      <ServicesSiteFooter />
+      <SiteFooter />
       <MobileBottomNav />
     </div>
   );

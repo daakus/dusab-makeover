@@ -1,7 +1,6 @@
 import { BridalPromo } from "@/components/home/bridal-promo";
 import { DirectConsultation } from "@/components/home/direct-consultation";
 import { FeaturedServices } from "@/components/home/featured-services";
-import { HomeFooter } from "@/components/home/home-footer";
 import { HomeHero } from "@/components/home/home-hero";
 import { HomeTopNav } from "@/components/home/home-top-nav";
 import { InstagramGallery } from "@/components/home/instagram-gallery";
@@ -11,6 +10,7 @@ import { Testimonials } from "@/components/home/testimonials";
 import { WhatsAppFloat } from "@/components/home/whatsapp-float";
 import { WhyChooseUs } from "@/components/home/why-choose-us";
 import { Reveal } from "@/components/ui/reveal";
+import { SiteFooter } from "@/components/layout/site-footer";
 
 export function HomePageView() {
   return (
@@ -37,7 +37,7 @@ export function HomePageView() {
           <InstagramGallery />
         </Reveal>
       </main>
-      <HomeFooter />
+      <SiteFooter />
       <MobileBottomNav />
       <WhatsAppFloat />
       <MobileBookingFab />

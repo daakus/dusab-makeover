@@ -10,7 +10,7 @@ import {
 import { submitBooking } from "@/app/actions/booking";
 import { buildBookingWhatsAppUrl } from "@/lib/utils/whatsapp";
 import { BookingFlowChrome } from "@/components/booking/booking-flow-chrome";
-import { BookingFlowFooter } from "@/components/booking/booking-flow-footer";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { MaterialIcon } from "@/components/home/material-icon";
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
@@ -438,7 +438,7 @@ export function BookingSanctuaryView(props: {
         )}
       </main>
 
-      <BookingFlowFooter />
+      <SiteFooter />
     </div>
   );
 }

@@ -8,6 +8,7 @@ import { signUpWithPassword } from "@/app/actions/auth";
 import { AUTH_EDITORIAL_IMAGES } from "@/lib/constants/auth-editorial";
 import { SITE_NAME } from "@/lib/constants/site";
 import { AuthTransactionalHeader } from "@/components/auth/auth-transactional-header";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { MaterialIcon } from "@/components/home/material-icon";
 
 const initial: AuthActionState = {};
@@ -56,7 +57,7 @@ export function RegisterEditorialForm(props: {
           <div className="absolute -bottom-20 -right-10 z-0 h-[500px] w-80 rotate-3 overflow-hidden rounded-t-full opacity-80 shadow-2xl">
             <Image
               src={AUTH_EDITORIAL_IMAGES.registerSanctuary}
-              alt="Beauty sanctuary interior"
+              alt="Dusab Beauty Palour bridal glam"
               fill
               className="object-cover"
               sizes="40vw"
@@ -203,6 +204,7 @@ export function RegisterEditorialForm(props: {
 
       <div className="pointer-events-none fixed left-[5%] top-[20%] -z-10 h-64 w-64 rounded-full border border-stitch-primary/10" />
       <div className="pointer-events-none fixed bottom-[10%] right-[2%] -z-10 h-96 w-96 rounded-full border border-stitch-secondary/5" />
+      <SiteFooter />
     </div>
   );
 }
